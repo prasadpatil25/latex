@@ -1,9 +1,9 @@
 {
   "holder": "tab-278m1o",
-  "state": "held",
+  "state": "released",
   "machine": "My-CV",
   "acquiredAt": 1795701287052,
-  "renewedAt": 1795701287052,
-  "expiresAt": 1795701887052,
+  "renewedAt": 1795701337709,
+  "expiresAt": 1795701337709,
   "enforced": true
 }
