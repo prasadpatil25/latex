@@ -1,9 +1,9 @@
 {
   "holder": "tab-sqclyg",
-  "state": "held",
+  "state": "released",
   "machine": "My-CV",
   "acquiredAt": 1795696465535,
-  "renewedAt": 1795696465535,
-  "expiresAt": 1795697065535,
+  "renewedAt": 1795696515479,
+  "expiresAt": 1795696515479,
   "enforced": true
 }
