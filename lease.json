@@ -1,9 +1,9 @@
 {
   "holder": "tab-6ge1nb",
-  "state": "held",
+  "state": "released",
   "machine": "My-article",
   "acquiredAt": 1795700960928,
-  "renewedAt": 1795700960928,
-  "expiresAt": 1795701560928,
+  "renewedAt": 1795701019664,
+  "expiresAt": 1795701019664,
   "enforced": true
 }
