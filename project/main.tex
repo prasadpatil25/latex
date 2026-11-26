@@ -1,0 +1,35 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\titlerule]
+\newcommand{\entry}[3]{\textbf{#1} \hfill #2 \\ #3 \par\medskip}
+
+\begin{document}
+
+{\LARGE\bfseries Your Name} \\[2pt]
+Your Town \quad | \quad \href{mailto:you@example.org}{you@example.org} \quad | \quad +00 000 000 000
+
+\section{Education}
+\entry{Degree, University}{2020 -- 2024}{Thesis: the title of your thesis.}
+
+\section{Experience}
+\entry{Role, Organisation}{2024 -- now}{%
+  \begin{itemize}[leftmargin=*, nosep]
+    \item What you did, and what came of it.
+    \item Another thing you did.
+  \end{itemize}}
+
+\section{Skills}
+\begin{itemize}[leftmargin=*, nosep]
+  \item Languages: \dots
+  \item Tools: \dots
+\end{itemize}
+
+\end{document}
