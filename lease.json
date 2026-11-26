@@ -1,9 +1,9 @@
 {
   "holder": "tab-sqclyg",
-  "state": "held",
+  "state": "released",
   "machine": "My-article",
   "acquiredAt": 1795696308003,
-  "renewedAt": 1795696308003,
-  "expiresAt": 1795696908003,
+  "renewedAt": 1795696443173,
+  "expiresAt": 1795696443173,
   "enforced": true
 }
