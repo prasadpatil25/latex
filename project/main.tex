@@ -1,0 +1,55 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+
+\title{The Title of Your Article}
+\author{Your Name \\ \small Your Institution}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+One paragraph that says what the article is about, what was done, and what was found.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+Start here. Cite earlier work like this \cite{knuth1984}, and point to a later
+section like this: Section~\ref{sec:results}.
+
+\section{Method}
+An equation, numbered so it can be referred to:
+\begin{equation}
+  \label{eq:energy}
+  E = m c^2 .
+\end{equation}
+Equation~\eqref{eq:energy} is referred to by its label.
+
+\section{Results}
+\label{sec:results}
+Figure~\ref{fig:sketch} is drawn with TikZ, so it needs no image file.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw[->] (0,0) -- (4.2,0) node[right] {$x$};
+    \draw[->] (0,0) -- (0,3.2) node[above] {$y$};
+    \draw[thick, blue] (0,0.3) .. controls (1.5,3) and (2.5,0.5) .. (4,2.6);
+  \end{tikzpicture}
+  \caption{A sketch of the result.}
+  \label{fig:sketch}
+\end{figure}
+
+\section{Conclusion}
+What the reader should take away.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
