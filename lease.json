@@ -3,7 +3,7 @@
   "state": "held",
   "machine": "Hey",
   "acquiredAt": 1795652202899,
-  "renewedAt": 1795700045474,
-  "expiresAt": 1795700645474,
+  "renewedAt": 1795700291600,
+  "expiresAt": 1795700891600,
   "enforced": true
 }
