@@ -1,0 +1,26 @@
+{
+  "build": "mwz38w2t-s8nx",
+  "branch": "My-CV",
+  "commit": "1c849814c9e17ca99e3450d94d57a97053b7501a",
+  "main": "main.tex",
+  "compiler": "xelatex",
+  "image": "\ntexlive/texlive:latest from the Actions cache",
+  "source": "cache",
+  "cache": "hit",
+  "tree": "own",
+  "whole": false,
+  "clean": false,
+  "carried": 0,
+  "stateRetry": false,
+  "state": 15,
+  "texlive": "TeX Live 2026",
+  "engine": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)",
+  "latexmk": 0,
+  "pdf": true,
+  "ms": {
+    "checkout": 4758,
+    "pull": 5168,
+    "compile": 28317,
+    "job": 39900
+  }
+}

@@ -1,0 +1,155 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{dickson2007}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ea6a3d8107b6fd887bff341dd7b33a5b}{%
+           family={Dickason},
+           familyi={D\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Audio Amateur Press}%
+      }
+      \strng{namehash}{ea6a3d8107b6fd887bff341dd7b33a5b}
+      \strng{fullhash}{ea6a3d8107b6fd887bff341dd7b33a5b}
+      \strng{fullhashraw}{ea6a3d8107b6fd887bff341dd7b33a5b}
+      \strng{bibnamehash}{ea6a3d8107b6fd887bff341dd7b33a5b}
+      \strng{authorbibnamehash}{ea6a3d8107b6fd887bff341dd7b33a5b}
+      \strng{authornamehash}{ea6a3d8107b6fd887bff341dd7b33a5b}
+      \strng{authorfullhash}{ea6a3d8107b6fd887bff341dd7b33a5b}
+      \strng{authorfullhashraw}{ea6a3d8107b6fd887bff341dd7b33a5b}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{7}
+      \field{isbn}{9781882580477}
+      \field{title}{The Loudspeaker Design Cookbook}
+      \field{year}{2007}
+    \endentry
+    \entry{horowitz2015}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=824849c061562c13dda5359277abcbe0}{%
+           family={Horowitz},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a6f0ca7031291d4aeed4a0ba41460b02}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{b45afa59dd1ebe0091dd0e1ae5b3dd39}
+      \strng{fullhash}{b45afa59dd1ebe0091dd0e1ae5b3dd39}
+      \strng{fullhashraw}{b45afa59dd1ebe0091dd0e1ae5b3dd39}
+      \strng{bibnamehash}{b45afa59dd1ebe0091dd0e1ae5b3dd39}
+      \strng{authorbibnamehash}{b45afa59dd1ebe0091dd0e1ae5b3dd39}
+      \strng{authornamehash}{b45afa59dd1ebe0091dd0e1ae5b3dd39}
+      \strng{authorfullhash}{b45afa59dd1ebe0091dd0e1ae5b3dd39}
+      \strng{authorfullhashraw}{b45afa59dd1ebe0091dd0e1ae5b3dd39}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3}
+      \field{isbn}{9780521809269}
+      \field{title}{The Art of Electronics}
+      \field{year}{2015}
+    \endentry
+    \entry{wang2003}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=f8479d51ab45a042f1fd4a25a002d91e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Avery},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f8479d51ab45a042f1fd4a25a002d91e}
+      \strng{fullhash}{f8479d51ab45a042f1fd4a25a002d91e}
+      \strng{fullhashraw}{f8479d51ab45a042f1fd4a25a002d91e}
+      \strng{bibnamehash}{f8479d51ab45a042f1fd4a25a002d91e}
+      \strng{authorbibnamehash}{f8479d51ab45a042f1fd4a25a002d91e}
+      \strng{authornamehash}{f8479d51ab45a042f1fd4a25a002d91e}
+      \strng{authorfullhash}{f8479d51ab45a042f1fd4a25a002d91e}
+      \strng{authorfullhashraw}{f8479d51ab45a042f1fd4a25a002d91e}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ISMIR 2003, 4th Symposium Conference on Music Information Retrieval}
+      \field{title}{An industrial strength audio search algorithm}
+      \field{year}{2003}
+      \field{pages}{7\bibrangedash 13}
+      \range{pages}{7}
+    \endentry
+    \entry{dewilde2016}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d073dee2caab58418d9cd7558214ffc9}{%
+           family={Wilde},
+           familyi={W\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod},
+           prefixun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Grasset}%
+      }
+      \strng{namehash}{d073dee2caab58418d9cd7558214ffc9}
+      \strng{fullhash}{d073dee2caab58418d9cd7558214ffc9}
+      \strng{fullhashraw}{d073dee2caab58418d9cd7558214ffc9}
+      \strng{bibnamehash}{d073dee2caab58418d9cd7558214ffc9}
+      \strng{authorbibnamehash}{d073dee2caab58418d9cd7558214ffc9}
+      \strng{authornamehash}{d073dee2caab58418d9cd7558214ffc9}
+      \strng{authorfullhash}{d073dee2caab58418d9cd7558214ffc9}
+      \strng{authorfullhashraw}{d073dee2caab58418d9cd7558214ffc9}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9782246859284}
+      \field{title}{Les fous du son}
+      \field{year}{2016}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
