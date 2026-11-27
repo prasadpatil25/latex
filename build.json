@@ -1,0 +1,26 @@
+{
+  "build": "mwz1s7ls-st87",
+  "branch": "okk",
+  "commit": "893115d15e429d08b04466af9902130c1c06950b",
+  "main": "main.tex",
+  "compiler": "xelatex",
+  "image": "\ntexlive/texlive:latest from the Actions cache",
+  "source": "cache",
+  "cache": "hit",
+  "tree": "own",
+  "whole": false,
+  "clean": false,
+  "carried": 7,
+  "stateRetry": false,
+  "state": 7,
+  "texlive": "TeX Live 2026",
+  "engine": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)",
+  "latexmk": 0,
+  "pdf": true,
+  "ms": {
+    "checkout": 690,
+    "pull": 2254,
+    "compile": 918,
+    "job": 4101
+  }
+}
