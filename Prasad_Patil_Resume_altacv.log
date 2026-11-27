@@ -1,0 +1,36 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.11.22)  27 NOV 2026 14:50
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**Prasad_Patil_Resume_altacv.tex
+(./Prasad_Patil_Resume_altacv.tex
+LaTeX2e <2026-11-01>
+L3 programming layer <2026-09-09>
+(./altacv.cls
+Document Class: altacv 2024/10/31 AltaCV v1.7.3, yet another alternative class 
+for a resume/curriculum vitae.
+
+! LaTeX Error: File `extarticle.cls' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: cls)
+
+Enter file name: 
+./altacv.cls:40: Emergency stop.
+<read *> 
+         
+l.40 \RequirePackage
+                    {etoolbox}^^M
+*** (cannot \read from terminal in nonstop modes)
+
+ 
+Here is how much of TeX's memory you used:
+ 52 strings out of 466968
+ 1015 string characters out of 5403487
+ 438368 words of memory out of 5000000
+ 29612 multiletter control sequences out of 15000+600000
+ 628489 words of font info for 40 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 33i,0n,46p,230b,17s stack positions out of 10000i,1000n,20000p,200000b,200000s
+./altacv.cls:40:  ==> Fatal error occurred, no output PDF file produced!

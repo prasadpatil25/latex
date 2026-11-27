@@ -1,0 +1,8 @@
+PWD /tmp/rrd/project
+INPUT /usr/local/texlive/2026/texmf.cnf
+INPUT /usr/local/texlive/2026/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT Prasad_Patil_Resume_altacv.tex
+OUTPUT Prasad_Patil_Resume_altacv.log
+INPUT ./altacv.cls
+INPUT altacv.cls

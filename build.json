@@ -1,0 +1,26 @@
+{
+  "build": "mwz40dbg-zb2x",
+  "branch": "Resume",
+  "commit": "fefda2692cbfe1a49050866c9763575f454ae97b",
+  "main": "Prasad_Patil_Resume_altacv.tex",
+  "compiler": "pdflatex",
+  "image": "\ntexlive/texlive:latest from the Actions cache",
+  "source": "cache",
+  "cache": "hit",
+  "tree": "own",
+  "whole": false,
+  "clean": false,
+  "carried": 4,
+  "stateRetry": false,
+  "state": 4,
+  "texlive": "TeX Live 2026",
+  "engine": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "latexmk": 12,
+  "pdf": true,
+  "ms": {
+    "checkout": 1435,
+    "pull": 3952,
+    "compile": 1047,
+    "job": 6644
+  }
+}
