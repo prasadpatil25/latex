@@ -1,0 +1,585 @@
+# Compiles a project branch's project/ with a native 64-bit TeX Live, on
+# GitHub's runner, and leaves the PDF on <branch>-pdf.
+#
+# This file is meant for the repository that holds the projects (it goes
+# in that repository's .github/workflows/). In rrd-app it is the copy the
+# page installs there when its GitHub engine is first used, after asking
+# (src/tex/actions.js, ensureWorkflow() in app/tex.js), and the one
+# tools/actions-spike.mjs measures. It is option B of the GitHub engine: the
+# official texlive/texlive image (TeX Live 2026 while that is the current
+# release) rather than the user's own 32-bit disk.
+#
+# Where TeX Live comes from (source=cache, what the page asks for):
+# - The repository's own TeX Live first: the files its builds have opened,
+#   each package's whole folder and each font family's folders, a few
+#   hundred MB where the whole tree is 4.9 GB (2.2 GB in the cache, 35-80 s
+#   to restore). A build that finds it lacking -- a file, a font, a program
+#   no earlier build used -- compiles again on the whole tree.
+# - The whole tree when there is no own copy yet, when the own copy lacked
+#   something, and for a clean build. That build is traced (strace: every
+#   file opened or run under the tree), and the own copy is rebuilt from
+#   the union of what it and the earlier builds used, after the PDF is
+#   published, so nobody waits for it.
+# - The whole tree is copied out of the image the first time (about three
+#   minutes) and kept in the cache before anything compiles.
+#
+# What a build carries to the next: everything the compile wrote beside the
+# sources (.aux, .bbl, .toc, latexmk's .fdb_latexmk...), kept under state/
+# on <branch>-pdf and put back before the next compile of the same document
+# with the same compiler, so latexmk reruns only what changed. A compile
+# that fails on one of those files runs once more from the sources alone.
+#
+# Rules it keeps:
+# - It never writes the project branch: that branch has two writers (the
+#   machine lane and the project lane) and must not get a third. The build
+#   is a parentless commit force-pushed to <branch>-pdf, replaced each time.
+# - Inputs reach the scripts as environment variables, never spliced into
+#   them as expressions: a branch or path is text the dispatcher chose.
+# - TeX runs with no network, as nobody: a document's shell escape or
+#   latexmkrc reaches its own checkout and nothing of TeX Live, which every
+#   later build restores.
+# - The checkout is project/ alone, blobs fetched on demand: the branch
+#   also holds the machine's chunk objects, hundreds of MB that a compile
+#   does not need.
+# - The tree runs where the image put it (/usr/local/texlive/2026), with the
+#   image's own fontconfig registration and a font cache built for it:
+#   given a fontconfig file of its own, XeTeX picked other faces than the
+#   image's (Fira Mono Oblique for upright).
+name: rrd compile
+run-name: rrd compile ${{ inputs.build }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: The project branch
+        required: true
+      main:
+        description: The main document, relative to project/
+        required: true
+      compiler:
+        description: pdflatex, xelatex or lualatex
+        default: pdflatex
+      image:
+        description: A texlive/texlive image tag
+        default: latest
+      build:
+        description: The caller's id for this build, written into build.json
+        default: ""
+      source:
+        description: image (pull it each run) or cache (this repository's Actions cache)
+        default: cache
+      clean:
+        description: Non-empty compiles from the sources alone, on the whole of TeX Live
+        default: ""
+      debug:
+        description: Non-empty prints what fontconfig and XeTeX see before compiling
+        default: ""
+
+permissions:
+  contents: write
+  # To drop the repository's older copy of its own TeX Live from the cache.
+  actions: write
+
+env:
+  BRANCH: ${{ inputs.branch }}
+  MAIN: ${{ inputs.main }}
+  COMPILER: ${{ inputs.compiler }}
+  TAG: ${{ inputs.image }}
+  BUILD: ${{ inputs.build }}
+  SOURCE: ${{ inputs.source }}
+  CLEAN: ${{ inputs.clean }}
+  DEBUG: ${{ inputs.debug }}
+  FULL_KEY: rrd-texlive-${{ inputs.image }}-v4
+  OWN_PREFIX: rrd-texlive-${{ inputs.image }}-own-v1-
+  GH_TOKEN: ${{ github.token }}
+  REPO: ${{ github.repository }}
+
+jobs:
+  # The page follows this job alone: the PDF is out when it ends.
+  compile:
+    name: compile
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # A newer build of the branch replaces one still compiling.
+    concurrency:
+      group: rrd-compile-${{ inputs.branch }}
+      cancel-in-progress: true
+    outputs:
+      traced: ${{ steps.publish.outputs.traced }}
+    steps:
+      - name: Check the inputs
+        run: |
+          echo "T_START=$(date +%s%3N)" >> "$GITHUB_ENV"
+          case "$COMPILER" in
+            pdflatex) echo "LATEXMK_ENGINE=-pdf" >> "$GITHUB_ENV" ;;
+            xelatex)  echo "LATEXMK_ENGINE=-pdfxe" >> "$GITHUB_ENV" ;;
+            lualatex) echo "LATEXMK_ENGINE=-pdflua" >> "$GITHUB_ENV" ;;
+            *) echo "::error::unknown compiler $COMPILER"; exit 1 ;;
+          esac
+          case "$SOURCE" in
+            image|cache) ;;
+            *) echo "::error::unknown source $SOURCE"; exit 1 ;;
+          esac
+          if ! printf '%s' "$TAG" | grep -Eq '^[A-Za-z0-9._-]{1,64}$'; then
+            echo "::error::bad image tag"; exit 1
+          fi
+          if ! git check-ref-format "refs/heads/$BRANCH"; then
+            echo "::error::bad branch name"; exit 1
+          fi
+          case "/$MAIN/" in
+            */../*|*/./*|//*) echo "::error::bad main path"; exit 1 ;;
+          esac
+          case "$MAIN" in
+            *.tex) ;;
+            *) echo "::error::main must be a .tex file"; exit 1 ;;
+          esac
+          # The steps below share these functions.
+          cat > "$RUNNER_TEMP/rrd.sh" <<'RRD'
+          now() { date +%s%3N; }
+          setenv() { echo "$1=$2" >> "$GITHUB_ENV"; export "$1=$2"; }
+          auth() { printf 'AUTHORIZATION: basic %s' "$(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"; }
+          image() { echo "texlive/texlive:$TAG"; }
+
+          # A tree at the image's path, with the image's fontconfig registration
+          # and the font cache built for that tree.
+          mount_tree() {
+            local dir="$1" root
+            root=$(cat "$dir/rrd/root")
+            sudo umount "$root" 2>/dev/null || true
+            sudo mkdir -p "$root"
+            sudo mount --bind "$dir" "$root"
+            sudo cp "$dir/rrd/09-texlive-fonts.conf" /etc/fonts/conf.d/09-texlive-fonts.conf
+            if [ -d "$dir/rrd/fc-cache" ]; then
+              sudo rm -f /var/cache/fontconfig/*
+              sudo cp -p "$dir"/rrd/fc-cache/* /var/cache/fontconfig/
+            else
+              sudo rm -f /var/cache/fontconfig/*
+              sudo fc-cache -s > /dev/null 2>&1 || true
+              mkdir -p "$dir/rrd/fc-cache"
+              cp -p /var/cache/fontconfig/* "$dir/rrd/fc-cache/"
+            fi
+            setenv TL_ROOT "$root"
+          }
+
+          # The whole tree: the cache's copy, or copied out of the image.
+          whole_tree() {
+            if [ ! -d ~/texlive/rrd ]; then
+              setenv FULL_MISS 1
+              docker pull -q "$(image)"
+              local root id
+              root=$(docker run --rm "$(image)" sh -c 'dirname "$(dirname "$(dirname "$(readlink -f "$(command -v pdflatex)")")")"')
+              id=$(docker create "$(image)")
+              docker cp "$id:$root" ~/texlive
+              mkdir -p ~/texlive/rrd
+              docker cp "$id:/etc/fonts/conf.d/09-texlive-fonts.conf" ~/texlive/rrd/09-texlive-fonts.conf
+              docker rm -f "$id" > /dev/null
+              echo "$root" > ~/texlive/rrd/root
+              # The image and the tree are 5 GB each; the cache's archive is
+              # written beside the tree, and with the image kept the disk ran out.
+              docker rmi -f "$(image)" > /dev/null
+            fi
+            mount_tree ~/texlive
+            setenv TREE whole
+            command -v strace > /dev/null || sudo apt-get install -y -qq strace > /dev/null 2>&1 ||
+              { sudo apt-get update -qq > /dev/null 2>&1 && sudo apt-get install -y -qq strace > /dev/null 2>&1; } || true
+          }
+
+          # TeX, with no network, as nobody, in the project's folder.
+          tex() {
+            if [ "$SOURCE" = cache ]; then
+              local bin
+              bin=$(echo "$TL_ROOT"/bin/*-linux)
+              sudo unshare --net -- setpriv --reuid=65534 --regid=65534 --clear-groups \
+                env -i PATH="$bin:/usr/bin:/bin" HOME=/tmp/rrd/home LANG=C.UTF-8 \
+                sh -c 'cd "$1" && shift && exec "$@"' sh "/tmp/rrd/project/$JOB_DIR" "$@"
+            else
+              docker run --rm --network none --user "$(id -u):$(id -g)" -e HOME=/tmp \
+                -v "$PWD/work/project:/project" -w "/project/$JOB_DIR" "$(image)" "$@"
+            fi
+          }
+
+          # What the last build of this document with this compiler left, put
+          # back beside the sources; never over a file the branch holds.
+          carry_state() {
+            : > "$RUNNER_TEMP/carried.txt"
+            [ -z "$CLEAN" ] || return 0
+            local prev="$RUNNER_TEMP/prev"
+            rm -rf "$prev" && git init -q "$prev"
+            git -C "$prev" -c "http.extraheader=$(auth)" fetch -q --depth=1 "https://github.com/$REPO" \
+              "refs/heads/$BRANCH-pdf" 2>/dev/null || return 0
+            git -C "$prev" show FETCH_HEAD:build.json > "$prev/build.json" 2>/dev/null || return 0
+            node -e '
+              const r = JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"));
+              process.exit(r.main === process.env.MAIN && r.compiler === process.env.COMPILER && r.state ? 0 : 1);
+            ' "$prev/build.json" || return 0
+            git -C "$prev" archive FETCH_HEAD state 2>/dev/null | tar -x -C "$prev" 2>/dev/null || return 0
+            (cd "$prev/state" && find . -type f -printf '%P\n') | while IFS= read -r f; do
+              if [ ! -e "work/project/$f" ]; then
+                mkdir -p "work/project/$(dirname "$f")"
+                cp -p "$prev/state/$f" "work/project/$f"
+                echo "$f" >> "$RUNNER_TEMP/carried.txt"
+              fi
+            done
+          }
+
+          # One latexmk; traced when it runs on the whole tree, for the
+          # repository's own copy.
+          compile_once() {
+            local traced=0
+            [ "$SOURCE" = cache ] && [ "$TREE" = whole ] && command -v strace > /dev/null && traced=1
+            sudo chmod -R a+rwX work/project
+            set +e
+            if [ "$traced" = 1 ]; then
+              tex strace -f -qq --seccomp-bpf -e trace=open,openat,openat2,execve -o /tmp/rrd/home/trace.txt \
+                latexmk "$LATEXMK_ENGINE" -f -interaction=nonstopmode -file-line-error -synctex=1 "$JOB.tex" \
+                > latexmk.out 2>&1
+            else
+              tex latexmk "$LATEXMK_ENGINE" -f -interaction=nonstopmode -file-line-error -synctex=1 "$JOB.tex" \
+                > latexmk.out 2>&1
+            fi
+            local code=$?
+            set -e
+            [ "$traced" = 1 ] && setenv TRACED 1
+            setenv LATEXMK_CODE "$code"
+          }
+
+          # A compile that failed on a file the last build left: from the sources alone.
+          compile_carried() {
+            compile_once
+            if [ "$LATEXMK_CODE" != 0 ] && [ -s "$RUNNER_TEMP/carried.txt" ] &&
+               grep -Eq '\.(aux|toc|lof|lot|out|bbl|nav|snm|bcf|ind|gls|acr):[0-9]+:' latexmk.out; then
+              echo "a file the last build left broke this one; compiling from the sources alone"
+              while IFS= read -r f; do rm -f "work/project/$f"; done < "$RUNNER_TEMP/carried.txt"
+              : > "$RUNNER_TEMP/carried.txt"
+              setenv STATE_RETRY 1
+              compile_once
+            fi
+          }
+
+          # Lines that say the tree lacked something: a file, a font, a program.
+          lacking() {
+            cat latexmk.out "work/project/$JOB_DIR/$JOB.log" 2>/dev/null | grep -E \
+              "LaTeX Error: File \`[^']*' not found|! I can't find file|Font shape \`[^']*' undefined|kpathsea: Running mktex|The font \"[^\"]*\" cannot be found|not loadable: Metric|Latexmk: Missing input file|: not found$|command not found|Can't locate .* in @INC|I couldn't open (style|database) file|Could not find .* (style|file)" \
+              | sed -E 's/ on input line [0-9]+//; s/[[:space:]]+$//' | sort -u
+          }
+          RRD
+          mkdir -p /tmp/rrd/home /tmp/rrd/project
+          chmod 777 /tmp/rrd/home
+
+      - name: Fetch project/
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          path: work
+          filter: blob:none
+          sparse-checkout: project
+          sparse-checkout-cone-mode: true
+          persist-credentials: false
+
+      - name: Mark the checkout
+        run: echo "T_CHECKOUT=$(date +%s%3N)" >> "$GITHUB_ENV"
+
+      # The repository's own TeX Live, the newest copy: its key is never
+      # asked for whole, only by prefix.
+      - name: Restore the repository's TeX Live
+        if: inputs.source == 'cache'
+        id: own
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/texlive-own
+          key: ${{ env.OWN_PREFIX }}none
+          restore-keys: ${{ env.OWN_PREFIX }}
+
+      - name: Restore the whole of TeX Live
+        if: inputs.source == 'cache' && (steps.own.outputs.cache-matched-key == '' || inputs.clean != '')
+        id: tl
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/texlive
+          key: ${{ env.FULL_KEY }}
+
+      - name: Get TeX Live
+        env:
+          OWN_KEY: ${{ steps.own.outputs.cache-matched-key }}
+        run: |
+          . "$RUNNER_TEMP/rrd.sh"
+          sudo mount --bind "$PWD/work/project" /tmp/rrd/project
+          if [ "$SOURCE" = image ]; then
+            docker pull -q "$(image)"
+            setenv TREE image
+          elif [ -n "$OWN_KEY" ] && [ -z "$CLEAN" ]; then
+            mount_tree ~/texlive-own
+            setenv TREE own
+            du -sh ~/texlive-own
+          else
+            whole_tree
+          fi
+          setenv T_PULL "$(now)"
+
+      # Kept before anything compiles, so no document's run can reach it.
+      - name: Keep the whole of TeX Live in the cache
+        if: inputs.source == 'cache' && env.FULL_MISS == '1'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/texlive
+          key: ${{ env.FULL_KEY }}
+
+      - name: Compile
+        run: |
+          . "$RUNNER_TEMP/rrd.sh"
+          test -f "work/project/$MAIN" || { echo "::error::no project/$MAIN on $BRANCH"; exit 1; }
+          dir=$(dirname "$MAIN"); file=$(basename "$MAIN")
+          setenv JOB_DIR "$dir"; setenv JOB "${file%.tex}"
+          carry_state
+          echo "carried from the last build: $(wc -l < "$RUNNER_TEMP/carried.txt") files"
+          if [ -n "$DEBUG" ]; then
+            echo "--- fontconfig"
+            tex sh -c 'command -v xetex; fc-cache --version 2>&1 | head -n 1'
+            tex sh -c 'fc-list "Fira Mono" style file; echo; fc-match "Fira Mono" file style; fc-match "Inria Sans:light:italic" file style'
+            echo "---"
+          fi
+          compile_carried
+          tail -n 40 latexmk.out
+          if [ "$TREE" = own ]; then
+            # Missing here and not missing on the whole tree: the copy lacks it.
+            known=~/texlive-own/rrd/known.txt
+            [ -f "$known" ] || known=/dev/null
+            new=$(lacking | comm -23 - "$known")
+            if [ -n "$new" ]; then
+              echo "the repository's TeX Live lacks what this build needs:"
+              echo "$new" | head -n 5
+              setenv NEED_WHOLE 1
+            fi
+          fi
+          setenv T_COMPILE "$(now)"
+
+      - name: Restore the whole of TeX Live, for what the repository's lacked
+        if: env.NEED_WHOLE == '1'
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/texlive
+          key: ${{ env.FULL_KEY }}
+
+      - name: Compile on the whole of TeX Live
+        if: env.NEED_WHOLE == '1'
+        run: |
+          . "$RUNNER_TEMP/rrd.sh"
+          whole_tree
+          # The carried files came from a build on the same sources; they stay.
+          compile_once
+          tail -n 40 latexmk.out
+          setenv T_COMPILE "$(now)"
+
+      - name: Publish to <branch>-pdf
+        id: publish
+        run: |
+          . "$RUNNER_TEMP/rrd.sh"
+          engine=$(case "$COMPILER" in pdflatex) echo pdftex ;; xelatex) echo xetex ;; *) echo luahbtex ;; esac)
+          year=$(basename "${TL_ROOT:-$(tex kpsewhich -var-value=SELFAUTOPARENT 2>/dev/null)}")
+          { echo "TeX Live $year"; tex "$engine" --version 2>/dev/null | head -n 1; } > versions.txt || true
+          src="work/project/$JOB_DIR"
+          mkdir out
+          for ext in pdf log synctex.gz; do
+            if [ -f "$src/$JOB.$ext" ]; then cp "$src/$JOB.$ext" out/; fi
+          done
+          cp latexmk.out out/latexmk.txt
+          # Everything the compile wrote beside the sources, for the next build.
+          git -C work ls-files -o -z -- project | while IFS= read -r -d '' f; do
+            if [ "$(stat -c %s "work/$f")" -lt 52428800 ]; then
+              mkdir -p "out/state/$(dirname "${f#project/}")"
+              cp -p "work/$f" "out/state/${f#project/}"
+            fi
+          done
+          head=$(git -C work rev-parse HEAD)
+          digest=$(docker image inspect --format '{{index .RepoDigests 0}}' "$(image)" 2>/dev/null \
+            || echo "$(image) from the Actions cache")
+          T_PUBLISH=$(now)
+          node -e '
+            const fs = require("fs"), e = process.env, n = (k) => Number(e[k]);
+            const [tl, engine] = fs.readFileSync("versions.txt", "utf8").trim().split("\n");
+            const count = (dir) => fs.existsSync(dir) ? fs.readdirSync(dir, { recursive: true, withFileTypes: true }).filter((d) => d.isFile()).length : 0;
+            console.log(JSON.stringify({
+              build: e.BUILD, branch: e.BRANCH, commit: process.argv[1], main: e.MAIN,
+              compiler: e.COMPILER, image: process.argv[2], source: e.SOURCE, cache: e.FULL_MISS ? "miss" : "hit",
+              // The tree the build began on; whole: it lacked something, and the whole tree compiled it.
+              tree: e.NEED_WHOLE === "1" ? "own" : e.TREE, whole: e.NEED_WHOLE === "1", clean: !!e.CLEAN,
+              carried: fs.readFileSync(e.RUNNER_TEMP + "/carried.txt", "utf8").split("\n").filter(Boolean).length,
+              stateRetry: e.STATE_RETRY === "1", state: count("out/state"),
+              texlive: tl, engine,
+              latexmk: n("LATEXMK_CODE"), pdf: fs.existsSync("out/" + e.JOB + ".pdf"),
+              ms: { checkout: n("T_CHECKOUT") - n("T_START"), pull: n("T_PULL") - n("T_CHECKOUT"),
+                    compile: n("T_COMPILE") - n("T_PULL"), job: Number(process.argv[3]) - n("T_START") }
+            }, null, 2));
+          ' "$head" "$digest" "$T_PUBLISH" > out/build.json
+          cat out/build.json
+          cd out
+          git init -q
+          git checkout -q --orphan build
+          git add -A
+          git -c user.name=rrd-build -c user.email=rrd-build@users.noreply.github.com \
+            commit -q -m "build: $MAIN ($COMPILER) from $head"
+          git -c "http.extraheader=$(auth)" push -q -f "https://github.com/$REPO" "HEAD:refs/heads/$BRANCH-pdf"
+          # What a traced build opened, for the job that rebuilds the
+          # repository's own TeX Live from it; what it still could not find
+          # is no lack of that copy.
+          echo "traced=${TRACED:-0}" >> "$GITHUB_OUTPUT"
+          if [ "${TRACED:-0}" = 1 ]; then
+            mkdir -p "$RUNNER_TEMP/rrd-trace"
+            cd "$GITHUB_WORKSPACE"
+            cp /tmp/rrd/home/trace.txt "$RUNNER_TEMP/rrd-trace/trace.txt"
+            lacking > "$RUNNER_TEMP/rrd-trace/lacking.txt"
+          fi
+
+      - name: Hand on what the build opened
+        if: steps.publish.outputs.traced == '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: rrd-trace
+          path: ${{ runner.temp }}/rrd-trace
+          retention-days: 1
+
+  # After the PDF is out, on a runner of its own: the repository's own TeX
+  # Live, rebuilt from what a traced build opened and what the earlier copy
+  # held. In a queue of its own, so a newer build of the branch never
+  # cancels it.
+  own:
+    name: the repository's TeX Live
+    needs: compile
+    if: needs.compile.outputs.traced == '1' && inputs.source == 'cache'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    concurrency:
+      group: rrd-own-texlive-${{ inputs.image }}
+      cancel-in-progress: false
+    steps:
+      # Every traced build's record still kept (a day), not this run's
+      # alone: GitHub keeps one job waiting in a queue and cancels the one
+      # it replaces, so builds finishing together left their files out of
+      # the copy until a later build traced them again.
+      - name: Fetch what the builds opened
+        run: |
+          mkdir -p traces
+          gh api "repos/$REPO/actions/artifacts?name=rrd-trace&per_page=100" \
+            --jq '.artifacts[] | select(.expired | not) | "\(.id) \(.workflow_run.id)"' |
+            while read -r id run; do
+              gh run download "$run" -n rrd-trace -D "traces/$id" -R "$REPO" > /dev/null 2>&1 || true
+            done
+          echo "$(find traces -name trace.txt | wc -l) traced builds"
+
+      - name: Restore the repository's TeX Live
+        id: own
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/texlive-own
+          key: ${{ env.OWN_PREFIX }}none
+          restore-keys: ${{ env.OWN_PREFIX }}
+
+      - name: Restore the whole of TeX Live
+        id: tl
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/texlive
+          key: ${{ env.FULL_KEY }}
+
+      - name: Rebuild the repository's TeX Live
+        if: steps.tl.outputs.cache-hit == 'true'
+        env:
+          OWN_KEY: ${{ steps.own.outputs.cache-matched-key }}
+        run: |
+          root=$(cat ~/texlive/rrd/root)
+          old=""
+          [ -f ~/texlive-own/rrd/files.txt ] && old=~/texlive-own/rrd/files.txt
+          node - "$root" ~/texlive traces "$old" > files.txt <<'NODE'
+          const fs = require("fs"), path = require("path");
+          const [root, whole, traces, old] = process.argv.slice(2);
+          const traceFiles = fs.readdirSync(traces, { recursive: true })
+            .filter((f) => path.basename(String(f)) === "trace.txt").map((f) => path.join(traces, String(f)));
+          const keep = new Set(old ? fs.readFileSync(old, "utf8").split("\n").filter(Boolean) : []);
+          const add = (rel) => { if (fs.existsSync(path.join(whole, rel)) || isLink(rel)) keep.add(rel); };
+          const isLink = (rel) => { try { return fs.lstatSync(path.join(whole, rel)).isSymbolicLink(); } catch { return false; } };
+          const walk = (rel) => {
+            let entries;
+            try { entries = fs.readdirSync(path.join(whole, rel), { withFileTypes: true }); } catch { return; }
+            for (const d of entries) {
+              const r = path.posix.join(rel, d.name);
+              if (d.isDirectory()) walk(r); else add(r);
+            }
+          };
+          const fontTypes = fs.readdirSync(path.join(whole, "texmf-dist/fonts"));
+          const walked = new Set();
+          const opened = new Set();
+          for (const line of traceFiles.flatMap((f) => fs.readFileSync(f, "utf8").split("\n"))) {
+            // A failed call is no use; an unfinished one (another thread's
+            // line between) still names its path, and only paths in the
+            // tree are kept.
+            if (/ = -1 /.test(line)) continue;
+            for (const m of line.matchAll(/"([^"]+)"/g)) {
+              if (m[1].startsWith(root + "/")) opened.add(m[1].slice(root.length + 1));
+            }
+          }
+          for (let rel of opened) {
+            let stat;
+            try { stat = fs.lstatSync(path.join(whole, rel)); } catch { continue; }
+            if (stat.isDirectory()) continue;
+            add(rel);
+            // A link's target comes with it (pdflatex is pdftex, latexmk a script).
+            if (stat.isSymbolicLink()) {
+              const target = path.relative(whole, fs.realpathSync(path.join(whole, rel)));
+              if (!target.startsWith("..")) add(target);
+            }
+            const p = rel.split("/");
+            // A package comes whole: tex/<format>/<package>/, and bibtex's and scripts' alike.
+            if (p[0] === "texmf-dist" && ["tex", "bibtex", "scripts", "makeindex", "biber"].includes(p[1]) && p.length > 4) {
+              walk(p.slice(0, 4).join("/"));
+            }
+            // A font family in every form: fonts/<type>/<supplier>/<family>/ for every type and supplier.
+            if (p[0] === "texmf-dist" && p[1] === "fonts" && p.length > 5 && !walked.has(p[4])) {
+              walked.add(p[4]);
+              for (const type of fontTypes) {
+                let suppliers = [];
+                try { suppliers = fs.readdirSync(path.join(whole, "texmf-dist/fonts", type)); } catch { continue; }
+                for (const supplier of suppliers) walk(`texmf-dist/fonts/${type}/${supplier}/${p[4]}`);
+              }
+            }
+          }
+          for (const rel of ["texmf.cnf", "texmf-dist/web2c/texmf.cnf", "texmf-dist/web2c/fmtutil.cnf", "texmf-dist/web2c/updmap.cfg"]) add(rel);
+          console.log([...keep].filter((r) => !r.startsWith("rrd/")).sort().join("\n"));
+          NODE
+          { find traces -name lacking.txt -exec cat {} +; cat ~/texlive-own/rrd/known.txt 2>/dev/null; } | sed '/^$/d' | sort -u > known.txt
+          if [ -n "$old" ] && cmp -s files.txt "$old" && cmp -s known.txt ~/texlive-own/rrd/known.txt; then
+            echo "the repository's TeX Live already holds all of it"; exit 0
+          fi
+          rm -rf ~/texlive-own
+          mkdir -p ~/texlive-own/rrd
+          (cd ~/texlive && tar -cf - --no-recursion -T "$GITHUB_WORKSPACE/files.txt") | tar -xf - -C ~/texlive-own
+          cp ~/texlive/rrd/root ~/texlive/rrd/09-texlive-fonts.conf ~/texlive-own/rrd/
+          cp files.txt known.txt ~/texlive-own/rrd/
+          # kpathsea searches the trees through ls-R; the copy needs its own.
+          bin=$(echo ~/texlive/bin/*-linux)
+          for t in texmf-dist texmf-var; do
+            if [ -d ~/texlive-own/$t ]; then PATH="$bin:$PATH" "$bin/mktexlsr" ~/texlive-own/$t > /dev/null 2>&1 || true; fi
+          done
+          # Its font cache, built where it runs, as the whole tree's is.
+          sudo mkdir -p "$root"
+          sudo mount --bind ~/texlive-own "$root"
+          sudo cp ~/texlive-own/rrd/09-texlive-fonts.conf /etc/fonts/conf.d/09-texlive-fonts.conf
+          sudo rm -f /var/cache/fontconfig/*
+          sudo fc-cache -s > /dev/null 2>&1 || true
+          mkdir -p ~/texlive-own/rrd/fc-cache
+          cp -p /var/cache/fontconfig/* ~/texlive-own/rrd/fc-cache/
+          sudo umount "$root"
+          echo "the repository's TeX Live: $(wc -l < files.txt) files, $(du -sh ~/texlive-own | cut -f1)"
+          echo "OWN_NEW_KEY=${OWN_PREFIX}$(cat files.txt known.txt | sha256sum | cut -c1-16)" >> "$GITHUB_ENV"
+          if [ -n "$OWN_KEY" ]; then echo "OWN_OLD_KEY=$OWN_KEY" >> "$GITHUB_ENV"; fi
+
+      - name: Keep the repository's TeX Live in the cache
+        if: env.OWN_NEW_KEY != ''
+        uses: actions/cache/save@v4
+        with:
+          path: ~/texlive-own
+          key: ${{ env.OWN_NEW_KEY }}
+
+      - name: Drop its older copy
+        if: env.OWN_NEW_KEY != '' && env.OWN_OLD_KEY != '' && env.OWN_OLD_KEY != env.OWN_NEW_KEY
+        run: gh cache delete "$OWN_OLD_KEY" -R "$REPO" || true
