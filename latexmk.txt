@@ -1,0 +1,6 @@
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 8 November 2026. Version 4.89.
+Latexmk: Nothing to do for 'paper_qdoa.tex'.
+Latexmk: All targets (paper_qdoa.pdf) are up-to-date
+
