@@ -1,0 +1,20 @@
+{
+  "build": "mwyauumh-isw1",
+  "branch": "ok2",
+  "commit": "7ffd473d652eca29d73dfe8512db6bd39c5f13e2",
+  "main": "inria-poster.tex",
+  "compiler": "xelatex",
+  "image": "\ntexlive/texlive:latest from the Actions cache",
+  "source": "cache",
+  "cache": "hit",
+  "texlive": "TeX Live (https://tug.org/texlive) version 2026",
+  "engine": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "latexmk": 0,
+  "pdf": true,
+  "ms": {
+    "checkout": 1484,
+    "pull": 26839,
+    "compile": 13033,
+    "job": 41916
+  }
+}
