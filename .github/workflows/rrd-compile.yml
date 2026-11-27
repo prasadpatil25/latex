@@ -1,0 +1,262 @@
+# Compiles a project branch's project/ with a native 64-bit TeX Live, on
+# GitHub's runner, and leaves the PDF on <branch>-pdf.
+#
+# This file is meant for the repository that holds the projects (it goes
+# in that repository's .github/workflows/). In rrd-app it is the copy the
+# page installs there when its GitHub engine is first used, after asking
+# (src/tex/actions.js, ensureWorkflow() in app/tex.js), and the one
+# tools/actions-spike.mjs measured. It is option B of the GitHub engine: the
+# official texlive/texlive image (TeX Live 2026 while that is the current
+# release) rather than the user's own 32-bit disk. The page dispatches it
+# with source=cache: TeX Live from the repository's Actions cache, filled by
+# the first build (about 3 minutes) and restored by the next in 35-80 s,
+# where pulling the image is 79-110 s every run.
+#
+# Rules it keeps:
+# - It never writes the project branch: that branch has two writers (the
+#   machine lane and the project lane) and must not get a third. The build
+#   is a parentless commit force-pushed to <branch>-pdf, replaced each time.
+# - Inputs reach the scripts as environment variables, never spliced into
+#   them as expressions: a branch or path is text the dispatcher chose.
+# - TeX runs with no network and as the runner's user, so a document's
+#   shell escape or latexmkrc reaches nothing but its folder.
+# - The checkout is project/ alone, blobs fetched on demand: the branch
+#   also holds the machine's chunk objects, hundreds of MB that a compile
+#   does not need.
+name: rrd compile
+run-name: rrd compile ${{ inputs.build }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: The project branch
+        required: true
+      main:
+        description: The main document, relative to project/
+        required: true
+      compiler:
+        description: pdflatex, xelatex or lualatex
+        default: pdflatex
+      image:
+        description: A texlive/texlive image tag
+        default: latest
+      build:
+        description: The caller's id for this build, written into build.json
+        default: ""
+      source:
+        description: image (pull it each run) or cache (this repository's Actions cache)
+        default: cache
+      debug:
+        description: Non-empty prints what fontconfig and XeTeX see before compiling
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rrd-compile-${{ inputs.branch }}
+  cancel-in-progress: true
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      BRANCH: ${{ inputs.branch }}
+      MAIN: ${{ inputs.main }}
+      COMPILER: ${{ inputs.compiler }}
+      TAG: ${{ inputs.image }}
+      BUILD: ${{ inputs.build }}
+      SOURCE: ${{ inputs.source }}
+      DEBUG: ${{ inputs.debug }}
+    steps:
+      - name: Check the inputs
+        run: |
+          echo "T_START=$(date +%s%3N)" >> "$GITHUB_ENV"
+          case "$COMPILER" in
+            pdflatex) echo "LATEXMK_ENGINE=-pdf" >> "$GITHUB_ENV" ;;
+            xelatex)  echo "LATEXMK_ENGINE=-pdfxe" >> "$GITHUB_ENV" ;;
+            lualatex) echo "LATEXMK_ENGINE=-pdflua" >> "$GITHUB_ENV" ;;
+            *) echo "::error::unknown compiler $COMPILER"; exit 1 ;;
+          esac
+          case "$SOURCE" in
+            image|cache) ;;
+            *) echo "::error::unknown source $SOURCE"; exit 1 ;;
+          esac
+          if ! printf '%s' "$TAG" | grep -Eq '^[A-Za-z0-9._-]{1,64}$'; then
+            echo "::error::bad image tag"; exit 1
+          fi
+          if ! git check-ref-format "refs/heads/$BRANCH"; then
+            echo "::error::bad branch name"; exit 1
+          fi
+          case "/$MAIN/" in
+            */../*|*/./*|//*) echo "::error::bad main path"; exit 1 ;;
+          esac
+          case "$MAIN" in
+            *.tex) ;;
+            *) echo "::error::main must be a .tex file"; exit 1 ;;
+          esac
+
+      - name: Fetch project/
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          path: work
+          filter: blob:none
+          sparse-checkout: project
+          sparse-checkout-cone-mode: true
+          persist-credentials: false
+
+      - name: Mark the checkout
+        run: echo "T_CHECKOUT=$(date +%s%3N)" >> "$GITHUB_ENV"
+
+      # source=cache: the image's TeX Live tree, kept in the Actions cache.
+      # The image is a 2.8 GB pull every run (no runner keeps it); the tree
+      # restores from the cache instead, and is copied out of the image only
+      # when the cache has none.
+      - name: Restore TeX Live
+        if: inputs.source == 'cache'
+        id: tl
+        uses: actions/cache/restore@v4
+        with:
+          path: ~/texlive
+          key: rrd-texlive-${{ inputs.image }}-v4
+
+      - name: Get TeX Live
+        env:
+          HIT: ${{ steps.tl.outputs.cache-hit }}
+        run: |
+          image="texlive/texlive:$TAG"
+          if [ "$SOURCE" = cache ] && [ "$HIT" = true ]; then
+            echo "CACHE=hit" >> "$GITHUB_ENV"
+            root=$(cat ~/texlive/rrd/root)
+          elif [ "$SOURCE" = cache ]; then
+            echo "CACHE=miss" >> "$GITHUB_ENV"
+            docker pull -q "$image"
+            # TeX Live's root is three levels above the pdflatex the image's
+            # PATH finds (/usr/local/texlive/2026).
+            root=$(docker run --rm "$image" sh -c 'dirname "$(dirname "$(dirname "$(readlink -f "$(command -v pdflatex)")")")"')
+            id=$(docker create "$image")
+            docker cp "$id:$root" ~/texlive
+            # The image's own fontconfig registration, copied as it is.
+            mkdir -p ~/texlive/rrd
+            docker cp "$id:/etc/fonts/conf.d/09-texlive-fonts.conf" ~/texlive/rrd/09-texlive-fonts.conf
+            docker rm -f "$id" > /dev/null
+            echo "$root" > ~/texlive/rrd/root
+            # The image and the tree are 5 GB each, and the cache's archive
+            # is written beside them at the job's end: with the image kept,
+            # the runner's disk ran out writing it.
+            docker rmi -f "$image" > /dev/null
+          fi
+          if [ "$SOURCE" = cache ]; then
+            # The runner made to look like the image where TeX can tell:
+            # the tree at the image's path, and TeX Live's font folders
+            # registered system-wide by the image's own file. Given its own
+            # fontconfig file naming the tree where it was restored, XeTeX
+            # found every face and picked others than the image's (Fira Mono
+            # Oblique for upright, Inria Sans Italic for Light Italic).
+            sudo mkdir -p "$root"
+            sudo mount --bind ~/texlive "$root"
+            sudo cp ~/texlive/rrd/09-texlive-fonts.conf /etc/fonts/conf.d/09-texlive-fonts.conf
+            # The system font cache over those folders is built once and
+            # kept with the tree; a cache file names its folder's path,
+            # which the bind mount keeps the same.
+            if [ -d ~/texlive/rrd/fc-cache ]; then
+              sudo cp -p ~/texlive/rrd/fc-cache/* /var/cache/fontconfig/
+            else
+              sudo fc-cache -s > /dev/null 2>&1 || true
+              mkdir -p ~/texlive/rrd/fc-cache
+              cp -p /var/cache/fontconfig/* ~/texlive/rrd/fc-cache/
+              du -sh ~/texlive/rrd/fc-cache
+            fi
+            echo "TL_ROOT=$root" >> "$GITHUB_ENV"
+            du -sh ~/texlive
+            df -h ~ | tail -n 1
+          else
+            docker pull -q "$image"
+          fi
+          echo "T_PULL=$(date +%s%3N)" >> "$GITHUB_ENV"
+
+      # Kept before the compile, not at the job's end: TeX runs as the user
+      # who owns the tree, so a document's shell escape or latexmkrc could
+      # change it, and a tree saved after the compile would carry that into
+      # every later build. Only a miss saves; a hit's tree is thrown away.
+      - name: Keep TeX Live in the cache
+        if: inputs.source == 'cache' && steps.tl.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/texlive
+          key: ${{ steps.tl.outputs.cache-primary-key }}
+
+      - name: Compile
+        run: |
+          image="texlive/texlive:$TAG"
+          test -f "work/project/$MAIN" || { echo "::error::no project/$MAIN on $BRANCH"; exit 1; }
+          dir=$(dirname "$MAIN"); file=$(basename "$MAIN"); job="${file%.tex}"
+          echo "JOB_DIR=$dir" >> "$GITHUB_ENV"; echo "JOB=$job" >> "$GITHUB_ENV"
+          # Both ways run TeX with no network, as the runner's user.
+          tex() {
+            if [ "$SOURCE" = cache ]; then
+              bin=$(echo "$TL_ROOT"/bin/*-linux)
+              mkdir -p /tmp/texhome
+              sudo unshare --net -- setpriv --reuid="$(id -u)" --regid="$(id -g)" --init-groups \
+                env -i PATH="$bin:/usr/bin:/bin" HOME=/tmp/texhome LANG=C.UTF-8 \
+                sh -c 'cd "$1" && shift && exec "$@"' sh "$PWD/work/project/$dir" "$@"
+            else
+              docker run --rm --network none --user "$(id -u):$(id -g)" -e HOME=/tmp \
+                -v "$PWD/work/project:/project" -w "/project/$dir" "$image" "$@"
+            fi
+          }
+          if [ -n "$DEBUG" ]; then
+            echo "--- fontconfig"
+            tex sh -c 'command -v xetex; ldd "$(command -v xetex)" | grep -i fontconfig || echo "xetex: no shared fontconfig"; fc-cache --version 2>&1 | head -n 1'
+            tex sh -c 'fc-list "Fira Mono" style file; echo; fc-match "Fira Mono" file style; fc-match "Inria Sans:light:italic" file style'
+            echo "---"
+          fi
+          set +e
+          tex latexmk "$LATEXMK_ENGINE" -f -interaction=nonstopmode -file-line-error -synctex=1 "$file" \
+            > latexmk.out 2>&1
+          code=$?
+          set -e
+          tail -n 40 latexmk.out
+          echo "T_COMPILE=$(date +%s%3N)" >> "$GITHUB_ENV"
+          echo "LATEXMK_CODE=$code" >> "$GITHUB_ENV"
+          { tex tlmgr --version | tail -n 1; tex pdflatex --version | head -n 1; } > versions.txt || true
+
+      - name: Publish to <branch>-pdf
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          src="work/project/$JOB_DIR"
+          mkdir out
+          for ext in pdf log synctex.gz; do
+            if [ -f "$src/$JOB.$ext" ]; then cp "$src/$JOB.$ext" out/; fi
+          done
+          cp latexmk.out out/latexmk.txt
+          head=$(git -C work rev-parse HEAD)
+          digest=$(docker image inspect --format '{{index .RepoDigests 0}}' "texlive/texlive:$TAG" 2>/dev/null \
+            || echo "texlive/texlive:$TAG from the Actions cache")
+          T_PUBLISH=$(date +%s%3N)
+          node -e '
+            const e = process.env, n = (k) => Number(e[k]);
+            const [tl, engine] = require("fs").readFileSync("versions.txt", "utf8").trim().split("\n");
+            console.log(JSON.stringify({
+              build: e.BUILD, branch: e.BRANCH, commit: process.argv[1], main: e.MAIN,
+              compiler: e.COMPILER, image: process.argv[2], source: e.SOURCE, cache: e.CACHE || null,
+              texlive: tl, engine,
+              latexmk: n("LATEXMK_CODE"), pdf: require("fs").existsSync("out/" + e.JOB + ".pdf"),
+              ms: { checkout: n("T_CHECKOUT") - n("T_START"), pull: n("T_PULL") - n("T_CHECKOUT"),
+                    compile: n("T_COMPILE") - n("T_PULL"), job: Number(process.argv[3]) - n("T_START") }
+            }, null, 2));
+          ' "$head" "$digest" "$T_PUBLISH" > out/build.json
+          cat out/build.json
+          cd out
+          git init -q
+          git checkout -q --orphan build
+          git add -A
+          git -c user.name=rrd-build -c user.email=rrd-build@users.noreply.github.com \
+            commit -q -m "build: $MAIN ($COMPILER) from $head"
+          git -c "http.extraheader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)" \
+            push -q -f "https://github.com/$REPO" "HEAD:refs/heads/$BRANCH-pdf"
