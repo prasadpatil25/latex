@@ -3,7 +3,7 @@
   "state": "held",
   "machine": "My-CV",
   "acquiredAt": 1795750255192,
-  "renewedAt": 1795750255192,
-  "expiresAt": 1795750855192,
+  "renewedAt": 1795750406971,
+  "expiresAt": 1795751006971,
   "enforced": true
 }
