@@ -1,0 +1,26 @@
+{
+  "build": "mwypal0i-wtmh",
+  "branch": "My-article",
+  "commit": "8218633c18248068e1c2176eda4f66e99ad2e6ec",
+  "main": "main.tex",
+  "compiler": "pdflatex",
+  "image": "\ntexlive/texlive:latest from the Actions cache",
+  "source": "cache",
+  "cache": "hit",
+  "tree": "own",
+  "whole": false,
+  "clean": false,
+  "carried": 9,
+  "stateRetry": false,
+  "state": 9,
+  "texlive": "TeX Live 2026",
+  "engine": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "latexmk": 0,
+  "pdf": true,
+  "ms": {
+    "checkout": 1288,
+    "pull": 2676,
+    "compile": 988,
+    "job": 5210
+  }
+}
