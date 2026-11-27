@@ -1,9 +1,9 @@
 {
   "holder": "tab-8msb18",
-  "state": "held",
+  "state": "released",
   "machine": "My-article",
   "acquiredAt": 1795756225047,
-  "renewedAt": 1795757214554,
-  "expiresAt": 1795757814554,
+  "renewedAt": 1795757222449,
+  "expiresAt": 1795757222449,
   "enforced": true
 }
