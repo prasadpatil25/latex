@@ -1,0 +1,2733 @@
+Rc files read (in order):
+  NONE
+Latexmk: This is Latexmk, John Collins, 8 November 2026. Version 4.89.
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'pdflatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -file-line-error -synctex=1 -recorder  "fqdoa_tc.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./fqdoa_tc.tex
+LaTeX2e <2026-11-01>
+L3 programming layer <2026-09-09>
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+-- This is a 10 point document.
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1ptm.fd))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
+tered.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
+.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_loader.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_pgfutil-common-lists.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
+.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructure.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructureext.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+array.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+matrix.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
+shared.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+deque.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.co
+de.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.da
+ta.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
+s.surfshading.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
+.surfshading.pgfsys-pdftex.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.
+code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.cod
+e.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.c
+ode.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandle
+r.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.
+code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessin
+g.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.te
+x)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
+ts.contourlua.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryplotmarks.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmar
+ks.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
+ts.groupplots.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarycalc.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/relsize/relsize.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/qcircuit/qcircuit.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xy.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing:
+catcodes, docmode,
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyrecat.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyidioms.tex)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state, direction,
+utility macros; pictures: \xy, positions, objects, decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifpdf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xypdf.tex
+ Xy-pic option: PDF driver v.1.7 loaded))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.14 loaded)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyframe.tex
+ Xy-pic option: Frame and Bracket extension v.3.14 loaded)
+Xy-pic pdf driver: `frame' extension support
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xypdf-fr.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.12 curve, circles, loaded)
+Xy-pic pdf driver: `curve' extension support
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded)
+loaded) (/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyarc.tex
+ Xy-pic option: Circle, Ellipse, Arc feature v.3.8 circles, ellipses,
+elliptical arcs, loaded))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/nameref/nameref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (./generated/values.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/catchfile/catchfile.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/etexcmds/etexcmds.sty))
+(./generated/tab_norm.tex) (./generated/tab_fake.tex)
+(./generated/tab_matched.tex) (./generated/supp_labels.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def)
+(./fqdoa_tc.aux)
+-- Lines per column: 58 (exact).
+(/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+LaTeX Warning: Citation `kaplan2016breaking' on page 1 undefined on input line 
+138.
+
+
+LaTeX Warning: Citation `leander2017grover' on page 1 undefined on input line 1
+38.
+
+
+LaTeX Warning: Citation `bonnetain2019quantum' on page 1 undefined on input lin
+e 138.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 1 undefined on input lin
+e 138.
+
+
+LaTeX Warning: Citation `grover1996fast' on page 1 undefined on input line 142.
+
+
+
+LaTeX Warning: Citation `patil2026quantum' on page 1 undefined on input line 15
+1.
+
+
+LaTeX Warning: Citation `figgatt2017complete' on page 1 undefined on input line
+ 153.
+
+
+LaTeX Warning: Citation `abughanem2025characterizing' on page 1 undefined on in
+put line 153.
+
+
+LaTeX Warning: Citation `bennett1973logical' on page 1 undefined on input line 
+155.
+
+
+LaTeX Warning: Citation `leymann2020bitter' on page 1 undefined on input line 1
+65.
+
+
+LaTeX Warning: Citation `johansson2019quantum' on page 1 undefined on input lin
+e 165.
+
+
+LaTeX Warning: Citation `soeken2019lut' on page 1 undefined on input line 167.
+
+
+LaTeX Warning: Citation `bernasconi2023xor' on page 1 undefined on input line 1
+67.
+
+
+LaTeX Warning: Citation `seidel2023automatic' on page 1 undefined on input line
+ 167.
+
+
+LaTeX Warning: Citation `li2022verified' on page 1 undefined on input line 167.
+
+
+
+LaTeX Warning: Citation `jaques2020implementing' on page 1 undefined on input l
+ine 167.
+
+
+LaTeX Warning: Citation `chung2022alternative' on page 1 undefined on input lin
+e 167.
+
+
+LaTeX Warning: Citation `zhang2024optimized' on page 1 undefined on input line 
+167.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 1 undefined on input lin
+e 167.
+
+
+LaTeX Warning: Citation `bennett1973logical' on page 1 undefined on input line 
+169.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1pcr.fd) [1{/usr/local/te
+xlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/202
+6/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+
+LaTeX Warning: Reference `sec:cost' on page 2 undefined on input line 215.
+
+
+LaTeX Warning: Reference `sec:threshold' on page 2 undefined on input line 215.
+
+
+
+LaTeX Warning: Reference `sec:correctness' on page 2 undefined on input line 21
+9.
+
+
+LaTeX Warning: Reference `sec:simon' on page 2 undefined on input line 220.
+
+
+LaTeX Warning: Reference `sec:select' on page 2 undefined on input line 228.
+
+
+LaTeX Warning: Reference `sec:threshold' on page 2 undefined on input line 228.
+
+
+
+LaTeX Warning: Reference `sec:validation' on page 2 undefined on input line 228
+.
+
+
+LaTeX Warning: Reference `sec:correctness' on page 2 undefined on input line 23
+5.
+
+
+LaTeX Warning: Reference `sec:experiments' on page 2 undefined on input line 23
+5.
+
+
+LaTeX Warning: Reference `prop:coherence' on page 2 undefined on input line 243
+.
+
+
+LaTeX Warning: Reference `prop:listing' on page 2 undefined on input line 244.
+
+
+LaTeX Warning: Reference `sec:select' on page 2 undefined on input line 244.
+
+
+LaTeX Warning: Reference `sec:related' on page 2 undefined on input line 247.
+
+
+LaTeX Warning: Citation `patil2026quantum' on page 2 undefined on input line 24
+8.
+
+
+LaTeX Warning: Reference `sec:prior' on page 2 undefined on input line 248.
+
+
+LaTeX Warning: Reference `sec:method' on page 2 undefined on input line 249.
+
+
+LaTeX Warning: Reference `sec:experiments' on page 2 undefined on input line 25
+0.
+
+
+LaTeX Warning: Reference `sec:discussion' on page 2 undefined on input line 251
+.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 252
+.
+
+
+LaTeX Warning: Reference `tab:prior' on page 2 undefined on input line 259.
+
+
+LaTeX Warning: Citation `simon1994power' on page 2 undefined on input line 265.
+
+
+
+LaTeX Warning: Citation `grover1996fast' on page 2 undefined on input line 270.
+
+
+
+LaTeX Warning: Citation `boyer1998tight' on page 2 undefined on input line 270.
+
+
+
+LaTeX Warning: Citation `kaplan2016breaking' on page 2 undefined on input line 
+273.
+
+
+LaTeX Warning: Citation `leander2017grover' on page 2 undefined on input line 2
+75.
+
+
+LaTeX Warning: Citation `bonnetain2019quantum' on page 2 undefined on input lin
+e 277.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 2 undefined on input lin
+e 279.
+
+
+LaTeX Warning: Citation `xia2025tight' on page 2 undefined on input line 280.
+
+
+LaTeX Warning: Citation `bennett1973logical' on page 2 undefined on input line 
+287.
+
+
+LaTeX Warning: Citation `barenco1995elementary' on page 2 undefined on input li
+ne 290.
+
+
+LaTeX Warning: Citation `shende2009cnot' on page 2 undefined on input line 291.
+
+
+
+LaTeX Warning: Citation `amy2013meet' on page 2 undefined on input line 291.
+
+
+LaTeX Warning: Citation `maslov2016advantages' on page 2 undefined on input lin
+e 293.
+
+
+LaTeX Warning: Citation `gidney2018halving' on page 2 undefined on input line 2
+95.
+
+
+LaTeX Warning: Citation `luongo2025measurement' on page 2 undefined on input li
+ne 296.
+
+
+LaTeX Warning: Citation `dutta2025exact' on page 2 undefined on input line 298.
+
+
+
+LaTeX Warning: Citation `soeken2019lut' on page 2 undefined on input line 303.
+
+
+LaTeX Warning: Citation `bernasconi2023xor' on page 2 undefined on input line 3
+05.
+
+
+LaTeX Warning: Citation `li2025stab' on page 2 undefined on input line 310.
+
+
+LaTeX Warning: Citation `paradis2021unqomp' on page 2 undefined on input line 3
+13.
+
+
+LaTeX Warning: Citation `seidel2023automatic' on page 2 undefined on input line
+ 314.
+
+
+LaTeX Warning: Citation `li2022verified' on page 2 undefined on input line 315.
+
+
+[2]
+
+LaTeX Warning: Citation `munoz2019quantum' on page 3 undefined on input line 31
+8.
+
+
+LaTeX Warning: Citation `jaques2020implementing' on page 3 undefined on input l
+ine 322.
+
+
+LaTeX Warning: Reference `prop:coherence' on page 3 undefined on input line 325
+.
+
+
+LaTeX Warning: Citation `chung2022alternative' on page 3 undefined on input lin
+e 328.
+
+
+LaTeX Warning: Citation `zhang2024optimized' on page 3 undefined on input line 
+329.
+
+
+LaTeX Warning: Citation `babbush2018encoding' on page 3 undefined on input line
+ 332.
+
+
+LaTeX Warning: Citation `javadiabhari2024quantum' on page 3 undefined on input 
+line 341.
+
+
+LaTeX Warning: Citation `li2019tackling' on page 3 undefined on input line 342.
+
+
+
+LaTeX Warning: Citation `tan2021optimality' on page 3 undefined on input line 3
+43.
+
+
+LaTeX Warning: Citation `li2021qubit' on page 3 undefined on input line 344.
+
+
+LaTeX Warning: Citation `zhu2023variation' on page 3 undefined on input line 34
+4.
+
+
+LaTeX Warning: Citation `luo2025towards' on page 3 undefined on input line 345.
+
+
+
+LaTeX Warning: Citation `fang2026dynamic' on page 3 undefined on input line 346
+.
+
+
+LaTeX Warning: Citation `satoh2020subdivided' on page 3 undefined on input line
+ 348.
+
+
+LaTeX Warning: Citation `pokharel2024better' on page 3 undefined on input line 
+349.
+
+
+LaTeX Warning: Citation `figgatt2017complete' on page 3 undefined on input line
+ 350.
+
+
+LaTeX Warning: Citation `abughanem2025characterizing' on page 3 undefined on in
+put line 350.
+
+
+LaTeX Warning: Citation `lubinski2023application' on page 3 undefined on input 
+line 355.
+
+
+LaTeX Warning: Citation `leymann2020bitter' on page 3 undefined on input line 3
+56.
+
+
+LaTeX Warning: Citation `johansson2019quantum' on page 3 undefined on input lin
+e 358.
+
+
+LaTeX Warning: Reference `tab:prior' on page 3 undefined on input line 365.
+
+
+LaTeX Warning: Citation `patil2026quantum' on page 3 undefined on input line 37
+0.
+
+
+LaTeX Warning: Reference `sec:problem' on page 3 undefined on input line 390.
+
+
+LaTeX Warning: Citation `leander2017grover' on page 3 undefined on input line 4
+02.
+
+
+LaTeX Warning: Citation `bonnetain2019quantum' on page 3 undefined on input lin
+e 402.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 3 undefined on input lin
+e 402.
+
+
+LaTeX Warning: Citation `xia2025tight' on page 3 undefined on input line 402.
+
+
+LaTeX Warning: Citation `patil2026quantum' on page 3 undefined on input line 40
+3.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 3 undefined on input lin
+e 419.
+
+
+LaTeX Warning: Reference `eq:costct' on page 3 undefined on input line 420.
+
+
+LaTeX Warning: Reference `prop:coherence' on page 3 undefined on input line 420
+.
+
+
+LaTeX Warning: Reference `sec:select' on page 3 undefined on input line 422.
+
+[3]
+
+LaTeX Warning: Citation `brassard2002amplitude' on page 4 undefined on input li
+ne 486.
+
+<xymatrix 11x3 1324> <xymatrix 5x4 847> <xymatrix 11x7 3328> <xymatrix 7x4
+1791>
+
+LaTeX Warning: Reference `sec:cost' on page 4 undefined on input line 559.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 561.
+
+
+
+LaTeX Warning: Reference `fig:circuit' on page 4 undefined on input line 571.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 587.
+
+
+
+LaTeX Warning: Reference `sec:cost' on page 4 undefined on input line 598.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [4]
+
+LaTeX Warning: Citation `maslov2016advantages' on page 5 undefined on input lin
+e 627.
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 638--640
+[][]\T1/ptm/m/it/10 (+20) Proposition 1: []  \T1/ptm/m/n/10 (+20) For ev-ery $\
+OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 X[]$\T1/ptm/m/n/10 (+20) 
+, $\OML/cmm/m/it/10 U[] [] \OT1/cmr/m/n/10 =
+
+LaTeX Warning: Reference `lem:uf' on page 5 undefined on input line 642.
+
+
+LaTeX Warning: Reference `lem:pm' on page 5 undefined on input line 642.
+
+
+LaTeX Warning: Reference `lem:uf' on page 5 undefined on input line 644.
+
+
+LaTeX Warning: Reference `prop:oracle' on page 5 undefined on input line 655.
+
+
+LaTeX Warning: Citation `boyer1998tight' on page 5 undefined on input line 658.
+
+
+
+LaTeX Warning: Reference `prop:success' on page 5 undefined on input line 661.
+
+
+LaTeX Warning: Reference `prop:oracle' on page 5 undefined on input line 662.
+
+
+LaTeX Warning: Reference `prop:success' on page 5 undefined on input line 675.
+
+
+LaTeX Warning: Citation `barenco1995elementary' on page 5 undefined on input li
+ne 688.
+
+
+LaTeX Warning: Citation `maslov2016advantages' on page 5 undefined on input lin
+e 690.
+
+
+LaTeX Warning: Citation `shende2009cnot' on page 5 undefined on input line 692.
+
+
+
+LaTeX Warning: Citation `amy2013meet' on page 5 undefined on input line 692.
+
+[5]
+
+LaTeX Warning: Reference `lem:pm' on page 6 undefined on input line 725.
+
+
+LaTeX Warning: Citation `bernasconi2023xor' on page 6 undefined on input line 7
+29.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 729.
+
+
+
+LaTeX Warning: Reference `lem:uf' on page 6 undefined on input line 732.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 733.
+
+
+
+LaTeX Warning: Reference `sec:threshold' on page 6 undefined on input line 733.
+
+
+
+LaTeX Warning: Reference `eq:costfq' on page 6 undefined on input line 759.
+
+
+LaTeX Warning: Reference `eq:costct' on page 6 undefined on input line 759.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 771.
+
+
+
+LaTeX Warning: Reference `prop:coherence' on page 6 undefined on input line 774
+.
+
+
+LaTeX Warning: Reference `prop:coherence' on page 6 undefined on input line 784
+.
+
+
+LaTeX Warning: Reference `prop:cheaper' on page 6 undefined on input line 785.
+
+
+LaTeX Warning: Citation `gidney2018halving' on page 6 undefined on input line 7
+87.
+
+
+LaTeX Warning: Citation `luongo2025measurement' on page 6 undefined on input li
+ne 790.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 791.
+
+
+
+LaTeX Warning: Citation `simon1994power' on page 6 undefined on input line 830.
+
+
+[6]
+
+LaTeX Warning: Citation `kaplan2016breaking' on page 7 undefined on input line 
+855.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 858.
+
+
+
+LaTeX Warning: Reference `prop:listing' on page 7 undefined on input line 872.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 876.
+
+
+
+LaTeX Warning: Reference `alg:select' on page 7 undefined on input line 883.
+
+
+LaTeX Warning: Reference `prop:listing' on page 7 undefined on input line 886.
+
+
+LaTeX Warning: Reference `prop:coherence' on page 7 undefined on input line 891
+.
+
+
+LaTeX Warning: Reference `eq:survival' on page 7 undefined on input line 899.
+
+
+LaTeX Warning: Citation `arute2019quantum' on page 7 undefined on input line 90
+4.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 913.
+
+
+
+LaTeX Warning: Reference `prop:listing' on page 7 undefined on input line 922.
+
+
+LaTeX Warning: Reference `eq:survival' on page 7 undefined on input line 930.
+
+
+LaTeX Warning: Citation `amy2013meet' on page 7 undefined on input line 947.
+
+
+LaTeX Warning: Citation `babbush2018encoding' on page 7 undefined on input line
+ 947.
+
+[7]
+
+LaTeX Warning: Reference `sec:styles' on page 8 undefined on input line 973.
+
+
+LaTeX Warning: Citation `javadiabhari2024quantum' on page 8 undefined on input 
+line 976.
+
+
+LaTeX Warning: Reference `tab:matched' on page 8 undefined on input line 1004.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1010
+.
+
+
+LaTeX Warning: Reference `tab:resources' on page 8 undefined on input line 1029
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1030
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1030
+.
+
+
+LaTeX Warning: Reference `prop:cheaper' on page 8 undefined on input line 1033.
+
+
+
+LaTeX Warning: Reference `prop:coherence' on page 8 undefined on input line 103
+6.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1045
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1050
+.
+
+
+LaTeX Warning: Reference `prop:coherence' on page 8 undefined on input line 105
+8.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1058
+.
+
+
+LaTeX Warning: Reference `fig:threshold' on page 8 undefined on input line 1077
+.
+
+
+LaTeX Warning: Reference `sec:cost' on page 8 undefined on input line 1078.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1081
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1081
+.
+
+
+Underfull \vbox (badness 1005) has occurred while \output is active [8]
+
+Package hyperref Warning: Suppressing link with empty target on input line 1106
+.
+
+
+LaTeX Warning: Reference `fig:noise' on page 9 undefined on input line 1144.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1144
+.
+
+
+LaTeX Warning: Reference `fig:noise' on page 9 undefined on input line 1215.
+
+
+LaTeX Warning: Reference `eq:survival' on page 9 undefined on input line 1221.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1222
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1234
+.
+
+
+LaTeX Warning: Reference `tab:matched' on page 9 undefined on input line 1236.
+
+
+LaTeX Warning: Reference `eq:survival' on page 9 undefined on input line 1238.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1239
+.
+
+
+LaTeX Warning: Reference `eq:survival' on page 9 undefined on input line 1249.
+
+[9]
+
+LaTeX Warning: Reference `eq:survival' on page 10 undefined on input line 1261.
+
+
+
+LaTeX Warning: Reference `eq:survival' on page 10 undefined on input line 1280.
+
+
+
+LaTeX Warning: Reference `tab:fake' on page 10 undefined on input line 1281.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1288
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1301
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1304
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1310
+.
+
+
+LaTeX Warning: Reference `eq:survival' on page 10 undefined on input line 1320.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1330
+.
+
+
+LaTeX Warning: Reference `prop:coherence' on page 10 undefined on input line 13
+55.
+
+
+LaTeX Warning: Reference `sec:threshold' on page 10 undefined on input line 135
+9.
+
+
+LaTeX Warning: Reference `prop:restriction' on page 10 undefined on input line 
+1364.
+
+
+LaTeX Warning: Reference `prop:simon' on page 10 undefined on input line 1366.
+
+
+LaTeX Warning: Reference `eq:pipeline' on page 10 undefined on input line 1366.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1366
+.
+
+
+LaTeX Warning: Reference `prop:coherence' on page 10 undefined on input line 13
+74.
+
+[10]
+
+LaTeX Warning: Citation `leander2017grover' on page 11 undefined on input line 
+1387.
+
+
+LaTeX Warning: Citation `jaques2020implementing' on page 11 undefined on input 
+line 1387.
+
+
+LaTeX Warning: Citation `imre2007quantum' on page 11 undefined on input line 13
+89.
+
+
+LaTeX Warning: Reference `sec:styles' on page 11 undefined on input line 1390.
+
+
+LaTeX Warning: Citation `brassard2002amplitude' on page 11 undefined on input l
+ine 1391.
+
+
+LaTeX Warning: Citation `imre2007quantum' on page 11 undefined on input line 13
+92.
+
+
+LaTeX Warning: Citation `boyer1998tight' on page 11 undefined on input line 139
+3.
+
+
+LaTeX Warning: Citation `soeken2019lut' on page 11 undefined on input line 1401
+.
+
+
+LaTeX Warning: Citation `bernasconi2023xor' on page 11 undefined on input line 
+1401.
+
+
+LaTeX Warning: Citation `paradis2021unqomp' on page 11 undefined on input line 
+1402.
+
+
+LaTeX Warning: Citation `babbush2018encoding' on page 11 undefined on input lin
+e 1402.
+
+
+LaTeX Warning: Citation `li2019tackling' on page 11 undefined on input line 140
+3.
+
+
+LaTeX Warning: Citation `tan2021optimality' on page 11 undefined on input line 
+1403.
+
+
+LaTeX Warning: Reference `prop:coherence' on page 11 undefined on input line 14
+04.
+
+
+LaTeX Warning: Citation `figgatt2017complete' on page 11 undefined on input lin
+e 1409.
+
+
+LaTeX Warning: Citation `abughanem2025characterizing' on page 11 undefined on i
+nput line 1409.
+
+
+LaTeX Warning: Citation `lubinski2023application' on page 11 undefined on input
+ line 1409.
+
+
+LaTeX Warning: Citation `leymann2020bitter' on page 11 undefined on input line 
+1415.
+
+
+LaTeX Warning: Citation `johansson2019quantum' on page 11 undefined on input li
+ne 1415.
+
+
+LaTeX Warning: Reference `sec:cost' on page 11 undefined on input line 1422.
+
+
+LaTeX Warning: Reference `sec:prior' on page 11 undefined on input line 1424.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1429
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1431
+.
+
+
+LaTeX Warning: Reference `sec:worth' on page 11 undefined on input line 1435.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1435
+.
+
+
+LaTeX Warning: Reference `sec:validation' on page 11 undefined on input line 14
+42.
+
+
+LaTeX Warning: Reference `sec:threshold' on page 11 undefined on input line 144
+3.
+
+
+LaTeX Warning: Reference `eq:survival' on page 11 undefined on input line 1447.
+
+
+
+LaTeX Warning: Reference `sec:validation' on page 11 undefined on input line 14
+49.
+
+
+LaTeX Warning: Citation `arute2019quantum' on page 11 undefined on input line 1
+450.
+
+
+LaTeX Warning: Reference `sec:hardware' on page 11 undefined on input line 1452
+.
+
+
+LaTeX Warning: Reference `alg:select' on page 11 undefined on input line 1452.
+
+
+LaTeX Warning: Reference `sec:applications' on page 11 undefined on input line 
+1491.
+
+No file fqdoa_tc.bbl.
+[11] [12 <./images/ppp.jpg> <./images/jvt.jpg> <./images/sjc.jpg>]
+(./fqdoa_tc.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `fqdoa_tc.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)</usr/local/texlive/2026/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
+></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loc
+al/texlive/2026/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texliv
+e/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/tex
+mf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on fqdoa_tc.pdf (12 pages, 706968 bytes).
+SyncTeX written on fqdoa_tc.synctex.gz.
+Transcript written on fqdoa_tc.log.
+Latexmk: Getting log file 'fqdoa_tc.log'
+Latexmk: Examining 'fqdoa_tc.fls'
+Latexmk: Examining 'fqdoa_tc.log'
+Latexmk: Missing bbl file 'fqdoa_tc.bbl' in following:
+ No file fqdoa_tc.bbl.
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'fqdoa_tc.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'fqdoa_tc.bbl' for 'pdflatex'
+Latexmk: Creating rule bibtex fqdoa_tc
+Latexmk: Found bibliography file(s):
+  ./references_tc.bib
+Latexmk: applying rule 'bibtex fqdoa_tc'...
+Rule 'bibtex fqdoa_tc':  Reasons for rerun
+Category 'other':
+  Rerun of 'bibtex fqdoa_tc' forced or previously required:
+    Reason or flag: 'Initial set up of rule'
+
+------------
+Run number 1 of rule 'bibtex fqdoa_tc'
+------------
+------------
+Running 'bibtex  "fqdoa_tc.aux"'
+------------
+This is BibTeX, Version 0.99e (TeX Live 2026)
+The top-level auxiliary file: fqdoa_tc.aux
+The style file: IEEEtranDOI.bst
+Database file #1: references_tc.bib
+-- IEEEtranDOI.bst, modified from IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
+
+Done.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  fqdoa_tc.aux
+  fqdoa_tc.bbl
+  fqdoa_tc.out
+
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -file-line-error -synctex=1 -recorder  "fqdoa_tc.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./fqdoa_tc.tex
+LaTeX2e <2026-11-01>
+L3 programming layer <2026-09-09>
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+-- This is a 10 point document.
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1ptm.fd))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
+tered.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
+.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_loader.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_pgfutil-common-lists.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
+.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructure.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructureext.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+array.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+matrix.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
+shared.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+deque.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.co
+de.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.da
+ta.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
+s.surfshading.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
+.surfshading.pgfsys-pdftex.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.
+code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.cod
+e.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.c
+ode.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandle
+r.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.
+code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessin
+g.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.te
+x)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
+ts.contourlua.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryplotmarks.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmar
+ks.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
+ts.groupplots.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarycalc.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/relsize/relsize.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/qcircuit/qcircuit.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xy.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing:
+catcodes, docmode,
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyrecat.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyidioms.tex)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state, direction,
+utility macros; pictures: \xy, positions, objects, decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifpdf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xypdf.tex
+ Xy-pic option: PDF driver v.1.7 loaded))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.14 loaded)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyframe.tex
+ Xy-pic option: Frame and Bracket extension v.3.14 loaded)
+Xy-pic pdf driver: `frame' extension support
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xypdf-fr.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.12 curve, circles, loaded)
+Xy-pic pdf driver: `curve' extension support
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded)
+loaded) (/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyarc.tex
+ Xy-pic option: Circle, Ellipse, Arc feature v.3.8 circles, ellipses,
+elliptical arcs, loaded))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/nameref/nameref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (./generated/values.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/catchfile/catchfile.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/etexcmds/etexcmds.sty))
+(./generated/tab_norm.tex) (./generated/tab_fake.tex)
+(./generated/tab_matched.tex) (./generated/supp_labels.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def)
+(./fqdoa_tc.aux)
+-- Lines per column: 58 (exact).
+(/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(./fqdoa_tc.out) (./fqdoa_tc.out)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+LaTeX Warning: Citation `kaplan2016breaking' on page 1 undefined on input line 
+138.
+
+
+LaTeX Warning: Citation `leander2017grover' on page 1 undefined on input line 1
+38.
+
+
+LaTeX Warning: Citation `bonnetain2019quantum' on page 1 undefined on input lin
+e 138.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 1 undefined on input lin
+e 138.
+
+
+LaTeX Warning: Citation `grover1996fast' on page 1 undefined on input line 142.
+
+
+
+LaTeX Warning: Citation `patil2026quantum' on page 1 undefined on input line 15
+1.
+
+
+LaTeX Warning: Citation `figgatt2017complete' on page 1 undefined on input line
+ 153.
+
+
+LaTeX Warning: Citation `abughanem2025characterizing' on page 1 undefined on in
+put line 153.
+
+
+LaTeX Warning: Citation `bennett1973logical' on page 1 undefined on input line 
+155.
+
+
+LaTeX Warning: Citation `leymann2020bitter' on page 1 undefined on input line 1
+65.
+
+
+LaTeX Warning: Citation `johansson2019quantum' on page 1 undefined on input lin
+e 165.
+
+
+LaTeX Warning: Citation `soeken2019lut' on page 1 undefined on input line 167.
+
+
+LaTeX Warning: Citation `bernasconi2023xor' on page 1 undefined on input line 1
+67.
+
+
+LaTeX Warning: Citation `seidel2023automatic' on page 1 undefined on input line
+ 167.
+
+
+LaTeX Warning: Citation `li2022verified' on page 1 undefined on input line 167.
+
+
+
+LaTeX Warning: Citation `jaques2020implementing' on page 1 undefined on input l
+ine 167.
+
+
+LaTeX Warning: Citation `chung2022alternative' on page 1 undefined on input lin
+e 167.
+
+
+LaTeX Warning: Citation `zhang2024optimized' on page 1 undefined on input line 
+167.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 1 undefined on input lin
+e 167.
+
+
+LaTeX Warning: Citation `bennett1973logical' on page 1 undefined on input line 
+169.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1pcr.fd) [1{/usr/local/te
+xlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/202
+6/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+
+LaTeX Warning: Citation `patil2026quantum' on page 2 undefined on input line 24
+8.
+
+
+LaTeX Warning: Citation `simon1994power' on page 2 undefined on input line 265.
+
+
+
+LaTeX Warning: Citation `grover1996fast' on page 2 undefined on input line 270.
+
+
+
+LaTeX Warning: Citation `boyer1998tight' on page 2 undefined on input line 270.
+
+
+
+LaTeX Warning: Citation `kaplan2016breaking' on page 2 undefined on input line 
+273.
+
+
+LaTeX Warning: Citation `leander2017grover' on page 2 undefined on input line 2
+75.
+
+
+LaTeX Warning: Citation `bonnetain2019quantum' on page 2 undefined on input lin
+e 277.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 2 undefined on input lin
+e 279.
+
+
+LaTeX Warning: Citation `xia2025tight' on page 2 undefined on input line 280.
+
+
+LaTeX Warning: Citation `bennett1973logical' on page 2 undefined on input line 
+287.
+
+
+LaTeX Warning: Citation `barenco1995elementary' on page 2 undefined on input li
+ne 290.
+
+
+LaTeX Warning: Citation `shende2009cnot' on page 2 undefined on input line 291.
+
+
+
+LaTeX Warning: Citation `amy2013meet' on page 2 undefined on input line 291.
+
+
+LaTeX Warning: Citation `maslov2016advantages' on page 2 undefined on input lin
+e 293.
+
+
+LaTeX Warning: Citation `gidney2018halving' on page 2 undefined on input line 2
+95.
+
+
+LaTeX Warning: Citation `luongo2025measurement' on page 2 undefined on input li
+ne 296.
+
+
+LaTeX Warning: Citation `dutta2025exact' on page 2 undefined on input line 298.
+
+
+
+LaTeX Warning: Citation `soeken2019lut' on page 2 undefined on input line 303.
+
+
+LaTeX Warning: Citation `bernasconi2023xor' on page 2 undefined on input line 3
+05.
+
+
+LaTeX Warning: Citation `li2025stab' on page 2 undefined on input line 310.
+
+
+LaTeX Warning: Citation `paradis2021unqomp' on page 2 undefined on input line 3
+13.
+
+
+LaTeX Warning: Citation `seidel2023automatic' on page 2 undefined on input line
+ 314.
+
+
+LaTeX Warning: Citation `li2022verified' on page 2 undefined on input line 315.
+
+
+[2]
+
+LaTeX Warning: Citation `munoz2019quantum' on page 3 undefined on input line 31
+8.
+
+
+LaTeX Warning: Citation `jaques2020implementing' on page 3 undefined on input l
+ine 322.
+
+
+LaTeX Warning: Citation `chung2022alternative' on page 3 undefined on input lin
+e 328.
+
+
+LaTeX Warning: Citation `zhang2024optimized' on page 3 undefined on input line 
+329.
+
+
+LaTeX Warning: Citation `babbush2018encoding' on page 3 undefined on input line
+ 332.
+
+
+LaTeX Warning: Citation `javadiabhari2024quantum' on page 3 undefined on input 
+line 341.
+
+
+LaTeX Warning: Citation `li2019tackling' on page 3 undefined on input line 342.
+
+
+
+LaTeX Warning: Citation `tan2021optimality' on page 3 undefined on input line 3
+43.
+
+
+LaTeX Warning: Citation `li2021qubit' on page 3 undefined on input line 344.
+
+
+LaTeX Warning: Citation `zhu2023variation' on page 3 undefined on input line 34
+4.
+
+
+LaTeX Warning: Citation `luo2025towards' on page 3 undefined on input line 345.
+
+
+
+LaTeX Warning: Citation `fang2026dynamic' on page 3 undefined on input line 346
+.
+
+
+LaTeX Warning: Citation `satoh2020subdivided' on page 3 undefined on input line
+ 348.
+
+
+LaTeX Warning: Citation `pokharel2024better' on page 3 undefined on input line 
+349.
+
+
+LaTeX Warning: Citation `figgatt2017complete' on page 3 undefined on input line
+ 350.
+
+
+LaTeX Warning: Citation `abughanem2025characterizing' on page 3 undefined on in
+put line 350.
+
+
+LaTeX Warning: Citation `lubinski2023application' on page 3 undefined on input 
+line 355.
+
+
+LaTeX Warning: Citation `leymann2020bitter' on page 3 undefined on input line 3
+56.
+
+
+LaTeX Warning: Citation `johansson2019quantum' on page 3 undefined on input lin
+e 358.
+
+
+LaTeX Warning: Citation `patil2026quantum' on page 3 undefined on input line 37
+0.
+
+
+LaTeX Warning: Citation `leander2017grover' on page 3 undefined on input line 4
+02.
+
+
+LaTeX Warning: Citation `bonnetain2019quantum' on page 3 undefined on input lin
+e 402.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 3 undefined on input lin
+e 402.
+
+
+LaTeX Warning: Citation `xia2025tight' on page 3 undefined on input line 402.
+
+
+LaTeX Warning: Citation `patil2026quantum' on page 3 undefined on input line 40
+3.
+
+
+LaTeX Warning: Citation `bonnetain2022quantum' on page 3 undefined on input lin
+e 419.
+
+[3]
+
+LaTeX Warning: Citation `brassard2002amplitude' on page 4 undefined on input li
+ne 486.
+
+<xymatrix 11x3 1324> <xymatrix 5x4 847> <xymatrix 11x7 3328> <xymatrix 7x4
+1791>
+
+Package hyperref Warning: Suppressing link with empty target on input line 561.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 587.
+
+
+[4]
+
+LaTeX Warning: Citation `maslov2016advantages' on page 5 undefined on input lin
+e 627.
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 638--640
+[][]\T1/ptm/m/it/10 (+20) Proposition 1: []  \T1/ptm/m/n/10 (+20) For ev-ery $\
+OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 X[]$\T1/ptm/m/n/10 (+20) 
+, $\OML/cmm/m/it/10 U[] [] \OT1/cmr/m/n/10 =
+
+LaTeX Warning: Citation `boyer1998tight' on page 5 undefined on input line 658.
+
+
+
+LaTeX Warning: Citation `barenco1995elementary' on page 5 undefined on input li
+ne 688.
+
+
+LaTeX Warning: Citation `maslov2016advantages' on page 5 undefined on input lin
+e 690.
+
+
+LaTeX Warning: Citation `shende2009cnot' on page 5 undefined on input line 692.
+
+
+
+LaTeX Warning: Citation `amy2013meet' on page 5 undefined on input line 692.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active [5]
+
+LaTeX Warning: Citation `bernasconi2023xor' on page 6 undefined on input line 7
+29.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 729.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 733.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 771.
+
+
+
+LaTeX Warning: Citation `gidney2018halving' on page 6 undefined on input line 7
+87.
+
+
+LaTeX Warning: Citation `luongo2025measurement' on page 6 undefined on input li
+ne 790.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 791.
+
+
+[6]
+
+LaTeX Warning: Citation `simon1994power' on page 7 undefined on input line 830.
+
+
+
+LaTeX Warning: Citation `kaplan2016breaking' on page 7 undefined on input line 
+855.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 858.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 876.
+
+
+
+LaTeX Warning: Citation `arute2019quantum' on page 7 undefined on input line 90
+4.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 913.
+
+
+
+LaTeX Warning: Citation `amy2013meet' on page 7 undefined on input line 947.
+
+
+LaTeX Warning: Citation `babbush2018encoding' on page 7 undefined on input line
+ 947.
+
+[7]
+
+LaTeX Warning: Citation `javadiabhari2024quantum' on page 8 undefined on input 
+line 976.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1010
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1030
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1030
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1045
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1050
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1058
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1081
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1081
+.
+
+[8]
+
+Package hyperref Warning: Suppressing link with empty target on input line 1106
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1144
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1222
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1234
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1239
+.
+
+[9]
+
+Package hyperref Warning: Suppressing link with empty target on input line 1288
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1301
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1304
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1310
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1330
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1366
+.
+
+[10]
+
+LaTeX Warning: Citation `leander2017grover' on page 11 undefined on input line 
+1387.
+
+
+LaTeX Warning: Citation `jaques2020implementing' on page 11 undefined on input 
+line 1387.
+
+
+LaTeX Warning: Citation `imre2007quantum' on page 11 undefined on input line 13
+89.
+
+
+LaTeX Warning: Citation `brassard2002amplitude' on page 11 undefined on input l
+ine 1391.
+
+
+LaTeX Warning: Citation `imre2007quantum' on page 11 undefined on input line 13
+92.
+
+
+LaTeX Warning: Citation `boyer1998tight' on page 11 undefined on input line 139
+3.
+
+
+LaTeX Warning: Citation `soeken2019lut' on page 11 undefined on input line 1401
+.
+
+
+LaTeX Warning: Citation `bernasconi2023xor' on page 11 undefined on input line 
+1401.
+
+
+LaTeX Warning: Citation `paradis2021unqomp' on page 11 undefined on input line 
+1402.
+
+
+LaTeX Warning: Citation `babbush2018encoding' on page 11 undefined on input lin
+e 1402.
+
+
+LaTeX Warning: Citation `li2019tackling' on page 11 undefined on input line 140
+3.
+
+
+LaTeX Warning: Citation `tan2021optimality' on page 11 undefined on input line 
+1403.
+
+
+LaTeX Warning: Citation `figgatt2017complete' on page 11 undefined on input lin
+e 1409.
+
+
+LaTeX Warning: Citation `abughanem2025characterizing' on page 11 undefined on i
+nput line 1409.
+
+
+LaTeX Warning: Citation `lubinski2023application' on page 11 undefined on input
+ line 1409.
+
+
+LaTeX Warning: Citation `leymann2020bitter' on page 11 undefined on input line 
+1415.
+
+
+LaTeX Warning: Citation `johansson2019quantum' on page 11 undefined on input li
+ne 1415.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1429
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1431
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1435
+.
+
+
+LaTeX Warning: Citation `arute2019quantum' on page 11 undefined on input line 1
+450.
+
+(./fqdoa_tc.bbl [11]
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
+[]\T1/ptm/m/n/8 (+20) A. Javadi-Abhari \T1/ptm/m/it/8 (+20) et al.\T1/ptm/m/n/8
+ (+20) , ``Quan-tum com-put-ing with Qiskit,''
+) [12] [13 <./images/ppp.jpg> <./images/jvt.jpg> <./images/sjc.jpg>]
+(./fqdoa_tc.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `fqdoa_tc.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information)</usr/local/texlive/2026/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
+></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loc
+al/texlive/2026/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texliv
+e/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/tex
+mf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on fqdoa_tc.pdf (13 pages, 727035 bytes).
+SyncTeX written on fqdoa_tc.synctex.gz.
+Transcript written on fqdoa_tc.log.
+Latexmk: Getting log file 'fqdoa_tc.log'
+Latexmk: Examining 'fqdoa_tc.fls'
+Latexmk: Examining 'fqdoa_tc.log'
+Latexmk: Found input bbl file 'fqdoa_tc.bbl'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'fqdoa_tc.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'fqdoa_tc.bbl' for 'pdflatex'
+Latexmk: Found bibliography file(s):
+  ./references_tc.bib
+Latexmk: applying rule 'bibtex fqdoa_tc'...
+Rule 'bibtex fqdoa_tc':  Reasons for rerun
+Changed files or newly in use/created:
+  fqdoa_tc.aux
+
+------------
+Run number 2 of rule 'bibtex fqdoa_tc'
+------------
+------------
+Running 'bibtex  "fqdoa_tc.aux"'
+------------
+This is BibTeX, Version 0.99e (TeX Live 2026)
+The top-level auxiliary file: fqdoa_tc.aux
+The style file: IEEEtranDOI.bst
+Database file #1: references_tc.bib
+-- IEEEtranDOI.bst, modified from IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** IEEEtran BST control entry "IEEEexample:BSTcontrol" detected.
+
+Done.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  fqdoa_tc.aux
+  fqdoa_tc.out
+
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -file-line-error -synctex=1 -recorder  "fqdoa_tc.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./fqdoa_tc.tex
+LaTeX2e <2026-11-01>
+L3 programming layer <2026-09-09>
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+-- This is a 10 point document.
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1ptm.fd))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
+tered.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex))
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric
+.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_loader.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplot
+soldpgfsupp_pgfutil-common-lists.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code
+.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructure.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+liststructureext.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+array.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+matrix.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable
+shared.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/liststructure/pgfplots
+deque.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.co
+de.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.da
+ta.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplot
+s.surfshading.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots
+.surfshading.pgfsys-pdftex.def)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.
+code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.cod
+e.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.c
+ode.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.c
+ode.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandle
+r.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.
+code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessin
+g.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.cod
+e.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.te
+x)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
+ts.contourlua.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryplotmarks.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmar
+ks.code.tex)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
+ts.groupplots.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarycalc.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/relsize/relsize.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/qcircuit/qcircuit.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xy.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing:
+catcodes, docmode,
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyrecat.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyidioms.tex)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state, direction,
+utility macros; pictures: \xy, positions, objects, decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifpdf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xypdf.tex
+ Xy-pic option: PDF driver v.1.7 loaded))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.14 loaded)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyframe.tex
+ Xy-pic option: Frame and Bracket extension v.3.14 loaded)
+Xy-pic pdf driver: `frame' extension support
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xypdf-fr.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.12 curve, circles, loaded)
+Xy-pic pdf driver: `curve' extension support
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded)
+loaded) (/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xypic/xyarc.tex
+ Xy-pic option: Circle, Ellipse, Arc feature v.3.8 circles, ellipses,
+elliptical arcs, loaded))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/nameref/nameref.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+))) (./generated/values.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/catchfile/catchfile.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/etexcmds/etexcmds.sty))
+(./generated/tab_norm.tex) (./generated/tab_fake.tex)
+(./generated/tab_matched.tex) (./generated/supp_labels.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def)
+(./fqdoa_tc.aux)
+-- Lines per column: 58 (exact).
+(/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+Package pgfplots notification 'compat/show suggested version=true': document ha
+s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-ptm.cfg)
+(./fqdoa_tc.out) (./fqdoa_tc.out)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1pcr.fd) [1{/usr/local/te
+xlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/202
+6/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2] [3] <xymatrix 11x3 1324>
+<xymatrix 5x4 847> <xymatrix 11x7 3328> <xymatrix 7x4 1791>
+
+Package hyperref Warning: Suppressing link with empty target on input line 561.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 587.
+
+
+[4]
+Underfull \hbox (badness 2495) in paragraph at lines 638--640
+[][]\T1/ptm/m/it/10 (+20) Proposition 1: []  \T1/ptm/m/n/10 (+20) For ev-ery $\
+OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 X[]$\T1/ptm/m/n/10 (+20) 
+, $\OML/cmm/m/it/10 U[] [] \OT1/cmr/m/n/10 =
+
+Underfull \vbox (badness 10000) has occurred while \output is active [5]
+
+Package hyperref Warning: Suppressing link with empty target on input line 729.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 733.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 771.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 791.
+
+
+[6]
+
+Package hyperref Warning: Suppressing link with empty target on input line 858.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 876.
+
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 913.
+
+
+[7]
+
+Package hyperref Warning: Suppressing link with empty target on input line 1010
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1030
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1030
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1045
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1050
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1058
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1081
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1081
+.
+
+[8]
+
+Package hyperref Warning: Suppressing link with empty target on input line 1106
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1144
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1222
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1234
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1239
+.
+
+[9]
+
+Package hyperref Warning: Suppressing link with empty target on input line 1288
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1301
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1304
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1310
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1330
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1366
+.
+
+[10]
+
+Package hyperref Warning: Suppressing link with empty target on input line 1429
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1431
+.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 1435
+.
+
+(./fqdoa_tc.bbl [11]
+Underfull \hbox (badness 10000) in paragraph at lines 210--212
+[]\T1/ptm/m/n/8 (+20) A. Javadi-Abhari \T1/ptm/m/it/8 (+20) et al.\T1/ptm/m/n/8
+ (+20) , ``Quan-tum com-put-ing with Qiskit,''
+) [12] [13 <./images/ppp.jpg> <./images/jvt.jpg> <./images/sjc.jpg>]
+(./fqdoa_tc.aux) )
+(see the transcript file for additional information)</usr/local/texlive/2026/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mti8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
+></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loc
+al/texlive/2026/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texliv
+e/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/tex
+mf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on fqdoa_tc.pdf (13 pages, 730952 bytes).
+SyncTeX written on fqdoa_tc.synctex.gz.
+Transcript written on fqdoa_tc.log.
+Latexmk: Getting log file 'fqdoa_tc.log'
+Latexmk: Examining 'fqdoa_tc.fls'
+Latexmk: Examining 'fqdoa_tc.log'
+Latexmk: Found input bbl file 'fqdoa_tc.bbl'
+Latexmk: Log file says output to 'fqdoa_tc.pdf'
+Latexmk: Using bibtex to make bibliography file(s).
+  ===Source file 'fqdoa_tc.bbl' for 'pdflatex'
+Latexmk: Found bibliography file(s):
+  ./references_tc.bib
+Latexmk: ====Problematic refs and citations with line #s in .tex file:
+  Package hyperref Warning: Suppressing link with empty target on input line 561.
+  Package hyperref Warning: Suppressing link with empty target on input line 561.
+  Package hyperref Warning: Suppressing link with empty target on input line 587.
+  Package hyperref Warning: Suppressing link with empty target on input line 587.
+  Package hyperref Warning: Suppressing link with empty target on input line 729.
+  Package hyperref Warning: Suppressing link with empty target on input line 729.
+  Package hyperref Warning: Suppressing link with empty target on input line 733.
+ And 55 more --- see log file 'fqdoa_tc.log'
+Latexmk: All targets (fqdoa_tc.pdf) are up-to-date
+

@@ -1,0 +1,26 @@
+{
+  "build": "mwyjzwnk-hbo6",
+  "branch": "Hey",
+  "commit": "7df73047b9bd4b40832db3179c8bbb598fecbefc",
+  "main": "fqdoa_tc.tex",
+  "compiler": "pdflatex",
+  "image": "\ntexlive/texlive:latest from the Actions cache",
+  "source": "cache",
+  "cache": "hit",
+  "tree": "whole",
+  "whole": false,
+  "clean": true,
+  "carried": 0,
+  "stateRetry": false,
+  "state": 8,
+  "texlive": "TeX Live 2026",
+  "engine": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026)",
+  "latexmk": 0,
+  "pdf": true,
+  "ms": {
+    "checkout": 1274,
+    "pull": 35740,
+    "compile": 9587,
+    "job": 47355
+  }
+}

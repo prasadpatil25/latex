@@ -1,0 +1,217 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{IEEEexample:BSTcontrol}
+\citation{kaplan2016breaking,leander2017grover,bonnetain2019quantum,bonnetain2022quantum}
+\citation{grover1996fast}
+\citation{patil2026quantum}
+\citation{figgatt2017complete,abughanem2025characterizing}
+\citation{bennett1973logical}
+\citation{leymann2020bitter,johansson2019quantum}
+\citation{soeken2019lut,bernasconi2023xor,seidel2023automatic,li2022verified,jaques2020implementing,chung2022alternative,zhang2024optimized,bonnetain2022quantum}
+\citation{bennett1973logical}
+\providecommand \oddpage@label [2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{I}{1}{Introduction}{section.1}{}}
+\citation{patil2026quantum}
+\citation{simon1994power}
+\citation{grover1996fast,boyer1998tight}
+\citation{kaplan2016breaking}
+\citation{leander2017grover}
+\citation{bonnetain2019quantum}
+\citation{bonnetain2022quantum}
+\citation{xia2025tight}
+\citation{bennett1973logical}
+\citation{barenco1995elementary}
+\citation{shende2009cnot}
+\citation{amy2013meet}
+\citation{maslov2016advantages}
+\citation{gidney2018halving}
+\citation{luongo2025measurement}
+\citation{dutta2025exact}
+\citation{soeken2019lut}
+\citation{bernasconi2023xor}
+\citation{li2025stab}
+\citation{paradis2021unqomp}
+\citation{seidel2023automatic}
+\citation{li2022verified}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Related Work and Prior Art}{2}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{II}{2}{Related Work and Prior Art}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Period Finding and Search in Cryptanalysis}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Oracle Synthesis and Its Cost}{2}{subsection.2.2}\protected@file@percent }
+\citation{munoz2019quantum}
+\citation{jaques2020implementing}
+\citation{chung2022alternative}
+\citation{zhang2024optimized}
+\citation{babbush2018encoding}
+\citation{javadiabhari2024quantum}
+\citation{li2019tackling}
+\citation{tan2021optimality}
+\citation{li2021qubit}
+\citation{zhu2023variation}
+\citation{luo2025towards}
+\citation{fang2026dynamic}
+\citation{satoh2020subdivided}
+\citation{pokharel2024better}
+\citation{figgatt2017complete,abughanem2025characterizing}
+\citation{lubinski2023application}
+\citation{leymann2020bitter}
+\citation{johansson2019quantum}
+\citation{patil2026quantum}
+\citation{leander2017grover,bonnetain2019quantum,bonnetain2022quantum,xia2025tight}
+\citation{patil2026quantum}
+\citation{bonnetain2022quantum}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Execution on Current Hardware}{3}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Benchmarking and Hidden Oracle Costs}{3}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Comparison With Prior Designs and With HQ-DOA}{3}{subsection.2.5}\protected@file@percent }
+\newlabel{sec:prior}{{\mbox  {II-E}}{3}{Comparison With Prior Designs and With HQ-DOA}{subsection.2.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Method}{3}{section.3}\protected@file@percent }
+\newlabel{sec:method}{{III}{3}{Method}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Problem Statement and Function Families}{3}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:problem}{{\mbox  {III-A}}{3}{Problem Statement and Function Families}{subsection.3.1}{}}
+\citation{brassard2002amplitude}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Comparison with prior hybrid period-and-search designs. $n$: input width; $c$: exceptional cosets; $k$: marked canonical inputs; $\mathcal  {M}$: marked outputs; MCZ: multi-controlled $Z$. Family $\mathcal  {E}$: functions described by a default output and exceptional cosets (Section~\ref {sec:problem}). n/a: not applicable.}}{4}{table.1}\protected@file@percent }
+\newlabel{tab:prior}{{I}{4}{Comparison with prior hybrid period-and-search designs. $n$: input width; $c$: exceptional cosets; $k$: marked canonical inputs; $\mathcal {M}$: marked outputs; MCZ: multi-controlled $Z$. Family $\famE $: functions described by a default output and exceptional cosets (Section~\ref {sec:problem}). n/a: not applicable}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Two Oracle Designs}{4}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:styles}{{\mbox  {III-B}}{4}{Two Oracle Designs}{subsection.3.2}{}}
+\citation{maslov2016advantages}
+\citation{boyer1998tight}
+\citation{barenco1995elementary}
+\citation{maslov2016advantages}
+\citation{shende2009cnot,amy2013meet}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Coherent-oracle search for family $\mathcal  {E}$, drawn for the four-bit benchmark ($s=1010$, representative bit $b=0$, so $x_b=x_0$). (a) All registers start in $\mathinner {|{0}\rangle }$: $x$ and $y$ with $n$ qubits each, $\mathit  {cf}$ with one, and $w$ with $n-2$. State preparation applies $H$ to every input qubit except $x_b$, so the register holds the $2^{n-1}$ canonical representatives. $R$ rounds of the oracle and diffusion follow, and $x$ is measured once at the end, giving $x^{*}$. (b) The oracle computes $f$ into $y$, flips the sign of outputs in $\mathcal  {M}$, and computes $f$ again to clear $y$ (the work register $w$ serves the decompositions). (c) Detection of the canonical pattern $a=0011$. The first $X$ gates write the default $\delta =1111$ (wires $y_2,y_3$ omitted). The $X$ gate on $x_1$ selects the zero of $a$, and the multi-controlled $X$ raises $\mathit  {cf}$. CNOTs then add $\delta \oplus o=1100$ to $y$, and the detection repeats to clear $\mathit  {cf}$. The bit $x_b$ is never a control. (d) Diffusion acts on the $n-1$ search qubits only. No measurement occurs before the final readout.}}{5}{figure.1}\protected@file@percent }
+\newlabel{fig:circuit}{{1}{5}{Coherent-oracle search for family $\famE $, drawn for the four-bit benchmark ($s=1010$, representative bit $b=0$, so $x_b=x_0$). (a) All registers start in $\ket {0}$: $x$ and $y$ with $n$ qubits each, $\mathit {cf}$ with one, and $w$ with $n-2$. State preparation applies $H$ to every input qubit except $x_b$, so the register holds the $2^{n-1}$ canonical representatives. $R$ rounds of the oracle and diffusion follow, and $x$ is measured once at the end, giving $x^{*}$. (b) The oracle computes $f$ into $y$, flips the sign of outputs in $\mathcal {M}$, and computes $f$ again to clear $y$ (the work register $w$ serves the decompositions). (c) Detection of the canonical pattern $a=0011$. The first $X$ gates write the default $\delta =1111$ (wires $y_2,y_3$ omitted). The $X$ gate on $x_1$ selects the zero of $a$, and the multi-controlled $X$ raises $\mathit {cf}$. CNOTs then add $\delta \oplus o=1100$ to $y$, and the detection repeats to clear $\mathit {cf}$. The bit $x_b$ is never a control. (d) Diffusion acts on the $n-1$ search qubits only. No measurement occurs before the final readout}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Correctness of the Coherent Oracle}{5}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:correctness}{{\mbox  {III-C}}{5}{Correctness of the Coherent Oracle}{subsection.3.3}{}}
+\newlabel{lem:uf}{{1}{5}{Correctness of the Coherent Oracle}{subsection.3.3}{}}
+\newlabel{lem:pm}{{2}{5}{Correctness of the Coherent Oracle}{subsection.3.3}{}}
+\newlabel{prop:oracle}{{1}{5}{Correctness of the Coherent Oracle}{subsection.3.3}{}}
+\newlabel{prop:success}{{2}{5}{Correctness of the Coherent Oracle}{subsection.3.3}{}}
+\newlabel{prop:restriction}{{3}{5}{Correctness of the Coherent Oracle}{subsection.3.3}{}}
+\citation{bernasconi2023xor}
+\citation{gidney2018halving}
+\citation{luongo2025measurement}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Cost Model and the Cost of Coherence}{6}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:cost}{{\mbox  {III-D}}{6}{Cost Model and the Cost of Coherence}{subsection.3.4}{}}
+\newlabel{prop:coherence}{{4}{6}{Cost of coherence}{subsection.3.4}{}}
+\newlabel{eq:costfq}{{1}{6}{Cost Model and the Cost of Coherence}{equation.1}{}}
+\newlabel{eq:costct}{{2}{6}{Cost Model and the Cost of Coherence}{equation.2}{}}
+\newlabel{prop:cheaper}{{5}{6}{Cost Model and the Cost of Coherence}{equation.2}{}}
+\newlabel{prop:listing}{{6}{6}{Cost of listing}{equation.2}{}}
+\citation{simon1994power}
+\citation{kaplan2016breaking}
+\citation{arute2019quantum}
+\citation{amy2013meet,babbush2018encoding}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-E}}Cost of Finding the Period and of the Whole Pipeline}{7}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:simon}{{\mbox  {III-E}}{7}{Cost of Finding the Period and of the Whole Pipeline}{subsection.3.5}{}}
+\newlabel{prop:simon}{{7}{7}{Cost of Finding the Period and of the Whole Pipeline}{subsection.3.5}{}}
+\newlabel{eq:pipeline}{{3}{7}{Cost of Finding the Period and of the Whole Pipeline}{equation.3}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Oracle selection pass.}}{7}{algocf.1}\protected@file@percent }
+\newlabel{alg:select}{{1}{7}{Oracle Selection Pass}{algocf.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-F}}Oracle Selection Pass}{7}{subsection.3.6}\protected@file@percent }
+\newlabel{sec:select}{{\mbox  {III-F}}{7}{Oracle Selection Pass}{subsection.3.6}{}}
+\newlabel{eq:survival}{{4}{7}{Oracle Selection Pass}{equation.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Experiments}{7}{section.4}\protected@file@percent }
+\newlabel{sec:experiments}{{IV}{7}{Experiments}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Setup}{7}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:setup}{{\mbox  {IV-A}}{7}{Setup}{subsection.4.1}{}}
+\citation{javadiabhari2024quantum}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Cost of the Oracles and How It Varies}{8}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:resources}{{\mbox  {IV-B}}{8}{Cost of the Oracles and How It Varies}{subsection.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Threshold Tests and the Choice by Target}{8}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:threshold}{{\mbox  {IV-C}}{8}{Threshold Tests and the Choice by Target}{subsection.4.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Cost of the coherent oracles (D3, Lin, Quad for families $\mathcal  {E}$, $\mathcal  {L}$, $\mathcal  {N}$) relative to the compile-time oracle (CT) for the whole search. T-count: Proposition~\ref {prop:coherence}, confirmed on every expanded circuit. Two-qubit: transpiled at optimization level 1, all-to-all. Absolute counts: Table~\ref {S-tab:resources}.}}{9}{table.2}\protected@file@percent }
+\newlabel{tab:resources}{{II}{9}{Cost of the coherent oracles (D3, Lin, Quad for families $\famE $, $\famL $, $\famN $) relative to the compile-time oracle (CT) for the whole search. T-count: Proposition~\ref {prop:coherence}, confirmed on every expanded circuit. Two-qubit: transpiled at optimization level 1, all-to-all. Absolute counts: Table~\ref {S-tab:resources}}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces T gates per iteration of the coherent oracle over those of the cheapest compile-time synthesis (cube, Reed--Muller, or affine cover), for threshold tests $\mathcal  {M}=\{y:y<\tau \}$, against the number $k$ of marked canonical inputs. All 20 instances per family, $n=4$ to 14, and $\tau \le 2^{n-1}/4$: 400, 400, and 540 cases. Below the dashed line the coherent oracle needs fewer T gates. Logarithmic axes; coinciding points overlap.}}{9}{figure.2}\protected@file@percent }
+\newlabel{fig:threshold}{{2}{9}{T gates per iteration of the coherent oracle over those of the cheapest compile-time synthesis (cube, Reed--Muller, or affine cover), for threshold tests $\mathcal {M}=\{y:y<\tau \}$, against the number $k$ of marked canonical inputs. All \val {thr.seeds} instances per family, $n=4$ to 14, and $\tau \le 2^{n-1}/4$: \val {thr.N.cases}, \val {thr.L.cases}, and \val {thr.R.cases} cases. Below the dashed line the coherent oracle needs fewer T gates. Logarithmic axes; coinciding points overlap}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Ablation of the Compilation Steps}{9}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:ablation}{{\mbox  {IV-D}}{9}{Ablation of the Compilation Steps}{subsection.4.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Success probability against the per-gate depolarizing strength. (a) $n=4$: design variants D0 to D3, the coherent oracles for families $\mathcal  {L}$ (Lin) and $\mathcal  {N}$ (Quad), and the compile-time oracle, from exact density matrices. (b) $n=6$: CT exact; D3, Lin, and Quad from 4\,000 sampled trajectories per point, with 95\% Wilson intervals. Reference lines: no-search level $k/2^{n-1}$ and chance level $k/2^n$.}}{9}{figure.3}\protected@file@percent }
+\newlabel{fig:noise}{{3}{9}{Success probability against the per-gate depolarizing strength. (a) $n=4$: design variants D0 to D3, the coherent oracles for families $\famL $ (Lin) and $\famN $ (Quad), and the compile-time oracle, from exact density matrices. (b) $n=6$: CT exact; D3, Lin, and Quad from \val {nz6.shots} sampled trajectories per point, with 95\% Wilson intervals. Reference lines: no-search level $k/2^{n-1}$ and chance level $k/2^n$}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-E}}Coherent Versus Compile-Time Under Noise}{9}{subsection.4.5}\protected@file@percent }
+\newlabel{sec:compare}{{\mbox  {IV-E}}{9}{Coherent Versus Compile-Time Under Noise}{subsection.4.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-F}}Hardware Results and Design Comparison}{9}{subsection.4.6}\protected@file@percent }
+\newlabel{sec:hardware}{{\mbox  {IV-F}}{9}{Hardware Results and Design Comparison}{subsection.4.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Designs on the Heron~r2 model and on two Heron~r2 processors. $G$: routed two-qubit count (FakeFez, seed 0). FakeFez: success under the noise model of the calibration snapshot, with 95\% Wilson interval. Pred.: Eq.~\eqref  {eq:survival} with the rate fitted to D3 at $n=4$ on \texttt  {ibm\_fez} on 3~June 2026. Hardware: mean of five runs on 11~October 2026 on \texttt  {ibm\_fez} (Fez) and \texttt  {ibm\_marrakesh} (Marr.), with the same $G$. No-search level 0.250 and 0.063; chance level 0.125 and 0.031.}}{10}{table.3}\protected@file@percent }
+\newlabel{tab:matched}{{III}{10}{Designs on the Heron~r2 model and on two Heron~r2 processors. $G$: routed two-qubit count (FakeFez, seed 0). FakeFez: success under the noise model of the calibration snapshot, with 95\% Wilson interval. Pred.: Eq.~\eqref {eq:survival} with the rate fitted to D3 at $n=4$ on \texttt {ibm\_fez} on \val {hw.A.date}. Hardware: mean of \val {hw.runs_word} runs on \val {hw.B.date} on \texttt {ibm\_fez} (Fez) and \texttt {ibm\_marrakesh} (Marr.), with the same $G$. No-search level \val {ref.nosearch.n4} and \val {ref.nosearch.n6}; chance level \val {ref.floor.n4} and \val {ref.floor.n6}}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-G}}Validation of the Selection Pass}{10}{subsection.4.7}\protected@file@percent }
+\newlabel{sec:validation}{{\mbox  {IV-G}}{10}{Validation of the Selection Pass}{subsection.4.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Validation of the selection pass on five device models. $p_{\mathrm  {eff}}$: rate fitted to D3 at $n=4$. MAE: mean absolute error of the predicted success of the other 15 candidates against simulation with the device's noise model. $\rho $: Spearman rank correlation. Choices: decisions in which the pass picks the best simulated candidate, out of six at $n=6$ (three families, with and without listing). Regret: largest loss in success. Per candidate: Table~\ref {S-tab:fake}.}}{10}{table.4}\protected@file@percent }
+\newlabel{tab:fake}{{IV}{10}{Validation of the selection pass on five device models. $p_{\mathrm {eff}}$: rate fitted to D3 at $n=4$. MAE: mean absolute error of the predicted success of the other \val {fake.ncand} candidates against simulation with the device's noise model. $\rho $: Spearman rank correlation. Choices: decisions in which the pass picks the best simulated candidate, out of six at $n=6$ (three families, with and without listing). Regret: largest loss in success. Per candidate: Table~\ref {S-tab:fake}}{table.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Discussion}{10}{section.5}\protected@file@percent }
+\newlabel{sec:discussion}{{V}{10}{Discussion}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}When Is a Coherent Oracle Worth Its Cost?}{10}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:worth}{{\mbox  {V-A}}{10}{When Is a Coherent Oracle Worth Its Cost?}{subsection.5.1}{}}
+\citation{leander2017grover,jaques2020implementing}
+\citation{imre2007quantum}
+\citation{brassard2002amplitude}
+\citation{imre2007quantum}
+\citation{boyer1998tight}
+\citation{soeken2019lut,bernasconi2023xor}
+\citation{paradis2021unqomp}
+\citation{babbush2018encoding}
+\citation{li2019tackling,tan2021optimality}
+\citation{figgatt2017complete,abughanem2025characterizing,lubinski2023application}
+\citation{leymann2020bitter,johansson2019quantum}
+\citation{arute2019quantum}
+\bibstyle{IEEEtranDOI}
+\bibdata{references_tc}
+\bibcite{kaplan2016breaking}{1}
+\bibcite{leander2017grover}{2}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Where the Choice Arises}{11}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:applications}{{\mbox  {V-B}}{11}{Where the Choice Arises}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Implications for Compilers and Benchmarks}{11}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:computing}{{\mbox  {V-C}}{11}{Implications for Compilers and Benchmarks}{subsection.5.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Limitations and Threats to Validity}{11}{subsection.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Conclusion}{11}{section.6}\protected@file@percent }
+\newlabel{sec:conclusion}{{VI}{11}{Conclusion}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{References}{11}{section*.1}\protected@file@percent }
+\bibcite{bonnetain2019quantum}{3}
+\bibcite{bonnetain2022quantum}{4}
+\bibcite{grover1996fast}{5}
+\bibcite{patil2026quantum}{6}
+\bibcite{figgatt2017complete}{7}
+\bibcite{abughanem2025characterizing}{8}
+\bibcite{bennett1973logical}{9}
+\bibcite{leymann2020bitter}{10}
+\bibcite{johansson2019quantum}{11}
+\bibcite{soeken2019lut}{12}
+\bibcite{bernasconi2023xor}{13}
+\bibcite{seidel2023automatic}{14}
+\bibcite{li2022verified}{15}
+\bibcite{jaques2020implementing}{16}
+\bibcite{chung2022alternative}{17}
+\bibcite{zhang2024optimized}{18}
+\bibcite{simon1994power}{19}
+\bibcite{boyer1998tight}{20}
+\bibcite{xia2025tight}{21}
+\bibcite{barenco1995elementary}{22}
+\bibcite{shende2009cnot}{23}
+\bibcite{amy2013meet}{24}
+\bibcite{maslov2016advantages}{25}
+\bibcite{gidney2018halving}{26}
+\bibcite{luongo2025measurement}{27}
+\bibcite{dutta2025exact}{28}
+\bibcite{li2025stab}{29}
+\bibcite{paradis2021unqomp}{30}
+\bibcite{munoz2019quantum}{31}
+\bibcite{babbush2018encoding}{32}
+\bibcite{javadiabhari2024quantum}{33}
+\bibcite{li2019tackling}{34}
+\bibcite{tan2021optimality}{35}
+\bibcite{li2021qubit}{36}
+\bibcite{zhu2023variation}{37}
+\bibcite{luo2025towards}{38}
+\bibcite{fang2026dynamic}{39}
+\bibcite{satoh2020subdivided}{40}
+\bibcite{pokharel2024better}{41}
+\bibcite{lubinski2023application}{42}
+\bibcite{brassard2002amplitude}{43}
+\bibcite{arute2019quantum}{44}
+\bibcite{imre2007quantum}{45}
+\@writefile{toc}{\contentsline {section}{Biographies}{13}{IEEEbiography.0}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Prasad Patil}{13}{IEEEbiography.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Jitendra Tembhurne}{13}{IEEEbiography.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Suvra Jyoti Choudhury}{13}{IEEEbiography.3}\protected@file@percent }
+\gdef \@abspage@last{13}
